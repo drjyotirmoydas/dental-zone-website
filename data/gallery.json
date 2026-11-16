@@ -245,7 +245,7 @@
       "video": "",
       "link": "",
       "caption": "ডায়াস্টেমা ক্লোজার",
-      "show": true
+      "show": false
     },
     {
       "title": "ফাঁকা ও ছোট সামনের দাঁত",
@@ -713,7 +713,7 @@
       "video": "",
       "link": "",
       "caption": "",
-      "show": true
+      "show": false
     },
     {
       "title": "অল-অন-ফোর: পুরো চোয়ালে ইমপ্ল্যান্ট",
