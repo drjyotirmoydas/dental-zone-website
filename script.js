@@ -232,12 +232,15 @@ fetch("data/gallery.json", { cache: "no-cache" })
   .catch(() => window.GALLERY_FALLBACK || { items: [] })
   .then(renderGallery);
 
-/* ---- links like drjyotirmoy.com/#appointment: land exactly on the section ---- */
+/* ---- links like drjyotirmoy.com/#appointment: keep the section in place while images, maps and the gallery load ---- */
 if (location.hash.length > 1) {
   const tgt = document.getElementById(decodeURIComponent(location.hash.slice(1)));
   if (tgt) {
     $$(".reveal", tgt).forEach(el => el.classList.add("in")); tgt.classList.add("in");
-    const go = () => tgt.scrollIntoView({ block: "start" });
-    document.fonts.ready.then(go); window.addEventListener("load", () => { go(); setTimeout(go, 400); });
+    let user = false; const stop = () => { user = true; };
+    ["wheel", "touchstart", "keydown", "mousedown"].forEach(ev => window.addEventListener(ev, stop, { once: true, passive: true }));
+    const go = () => { if (!user) tgt.scrollIntoView({ block: "start" }); };
+    const ro = new ResizeObserver(go); ro.observe(document.body);
+    go(); setTimeout(() => ro.disconnect(), 5000);
   }
 }
