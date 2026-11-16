@@ -140,6 +140,30 @@
       "show": true
     },
     {
+      "title": "সামনের দাঁতের একাধিক ফাঁকা বন্ধ",
+      "category": "কসমেটিক",
+      "type": "slider",
+      "before": "/assets/media/cases/nf-diastema1-before.jpg",
+      "after": "/assets/media/cases/nf-diastema1-after.jpg",
+      "image": "",
+      "video": "",
+      "link": "",
+      "caption": "ডায়াস্টেমা ক্লোজার (দাঁতের মাঝের ফাঁকা বন্ধ করা), কম্পোজিট দিয়ে",
+      "show": true
+    },
+    {
+      "title": "ফাঁকা ও ভাঙা কিনারার সামনের দাঁত",
+      "category": "কসমেটিক",
+      "type": "slider",
+      "before": "/assets/media/cases/nf-diastema2-before.jpg",
+      "after": "/assets/media/cases/nf-diastema2-after.jpg",
+      "image": "",
+      "video": "",
+      "link": "",
+      "caption": "মাঝের ফাঁকা বন্ধ ও কিনারা পুনর্গঠন, একই দিনে",
+      "show": true
+    },
+    {
       "title": "সামনের দাঁতের ক্ষয়ে কসমেটিক ফিলিং",
       "category": "কসমেটিক",
       "type": "slider",
@@ -629,6 +653,18 @@
       "video": "",
       "link": "",
       "caption": "",
+      "show": true
+    },
+    {
+      "title": "ইমপ্ল্যান্ট থেকে ক্রাউন: ধাপে ধাপে এক্স-রে",
+      "category": "ইমপ্ল্যান্ট ও সার্জারি",
+      "type": "photo",
+      "before": "",
+      "after": "",
+      "image": "/assets/media/gallery/nf-implant-xrays.jpg",
+      "video": "",
+      "link": "",
+      "caption": "পেছনের দাঁতে ইমপ্ল্যান্ট স্থাপন, অ্যাবাটমেন্ট ও চূড়ান্ত ক্রাউন",
       "show": true
     },
     {
