@@ -116,6 +116,30 @@
       "show": true
     },
     {
+      "title": "ডায়াস্টেমা ক্লোজার (দাঁতের মাঝের ফাঁকা বন্ধ করা)",
+      "category": "কসমেটিক",
+      "type": "slider",
+      "before": "/assets/media/cases/case58-before.jpg",
+      "after": "/assets/media/cases/case58-after.jpg",
+      "image": "",
+      "video": "",
+      "link": "",
+      "caption": "সামনের দাঁতের একাধিক ফাঁকা বন্ধ করে সুন্দর সারি",
+      "show": true
+    },
+    {
+      "title": "সামনের দুই দাঁতের মাঝের ফাঁকা বন্ধ",
+      "category": "কসমেটিক",
+      "type": "slider",
+      "before": "/assets/media/cases/case61-before.jpg",
+      "after": "/assets/media/cases/case61-after.jpg",
+      "image": "",
+      "video": "",
+      "link": "",
+      "caption": "মিডলাইন ডায়াস্টেমা ক্লোজার",
+      "show": true
+    },
+    {
       "title": "বিবর্ণ ও ফাঁকা সামনের দাঁত",
       "category": "কসমেটিক",
       "type": "slider",
@@ -209,6 +233,30 @@
       "video": "",
       "link": "",
       "caption": "দাঁতের আকার ও সৌন্দর্য ফিরিয়ে আনা",
+      "show": true
+    },
+    {
+      "title": "নিচের সামনের দাঁতের ফাঁকা বন্ধ",
+      "category": "কসমেটিক",
+      "type": "slider",
+      "before": "/assets/media/cases/case19-before.jpg",
+      "after": "/assets/media/cases/case19-after.jpg",
+      "image": "",
+      "video": "",
+      "link": "",
+      "caption": "ডায়াস্টেমা ক্লোজার (দাঁতের মাঝের ফাঁকা বন্ধ করা)",
+      "show": true
+    },
+    {
+      "title": "টুথ হোয়াইটেনিং: শেড D3 থেকে A1",
+      "category": "কসমেটিক",
+      "type": "slider",
+      "before": "/assets/media/cases/case14-before.jpg",
+      "after": "/assets/media/cases/case14-after.jpg",
+      "image": "",
+      "video": "",
+      "link": "",
+      "caption": "শেড গাইডে দাঁতের রঙের পার্থক্য",
       "show": true
     },
     {
