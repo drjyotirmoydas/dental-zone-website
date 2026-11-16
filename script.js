@@ -4,13 +4,23 @@
    All chambers send to 01728885550 (owner, 2026-11-15).
    wa  = WhatsApp number in international format, digits only (880 + number without the first 0)
    days = clinic days, 0=Sunday ... 6=Saturday                                                    */
+const EN = document.documentElement.lang === "en";   // English page lives at /en/
+const ROOT = EN ? "../" : "";
 const CHAMBERS = {
   dhaka:     { name: "দি ডেন্টাল জোন, ঢাকা (মিরপুর)",       wa: "8801728885550", days: [6,0,1,2,3], daysText: "শনি–বুধবার, সন্ধ্যা ৬টা–রাত ১০টা" },
   madaripur: { name: "দি ডেন্টাল জোন, মাদারীপুর (মেডিসিন মার্কেট)", wa: "8801728885550", days: [4,5], daysText: "বৃহস্পতি ও শুক্রবার" },
   planet:    { name: "প্ল্যানেট হাসপাতাল, মাদারীপুর",           wa: "8801728885550", days: [4,5], daysText: "বৃহস্পতি ও শুক্রবার" }
 };
-const DAY_BN = ["রবিবার","সোমবার","মঙ্গলবার","বুধবার","বৃহস্পতিবার","শুক্রবার","শনিবার"];
-const bnDigits = s => String(s).replace(/\d/g, d => "০১২৩৪৫৬৭৮৯"[d]);
+if (EN) {
+  CHAMBERS.dhaka.name = "The Dental Zone, Dhaka (Mirpur)"; CHAMBERS.dhaka.daysText = "Saturday to Wednesday, 6 pm to 10 pm";
+  CHAMBERS.madaripur.name = "The Dental Zone, Madaripur (Medicine Market)"; CHAMBERS.madaripur.daysText = "Thursday and Friday";
+  CHAMBERS.planet.name = "Planet Hospital, Madaripur"; CHAMBERS.planet.daysText = "Thursday and Friday";
+}
+const DAY_BN = EN ? ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"] : ["রবিবার","সোমবার","মঙ্গলবার","বুধবার","বৃহস্পতিবার","শুক্রবার","শনিবার"];
+const T = (bn, en) => EN ? en : bn;
+const CAT_EN = { "সব": "All", "ব্রেস": "Braces", "কসমেটিক": "Cosmetic", "রুট ক্যানেল": "Root Canal", "ইমপ্ল্যান্ট ও সার্জারি": "Implant & Surgery", "ক্রাউন ও ডেনচার": "Crown & Denture" };
+const catName = c => EN ? (CAT_EN[c] || c) : c;
+const bnDigits = s => EN ? String(s) : String(s).replace(/\d/g, d => "০১২৩৪৫৬৭৮৯"[d]);
 const enDigits = s => String(s).replace(/[০-৯]/g, d => "০১২৩৪৫৬৭৮৯".indexOf(d));
 const waLink = (num, text) => "https://wa.me/" + num + (text ? "?text=" + encodeURIComponent(text) : "");
 const $ = (q, el = document) => el.querySelector(q);
@@ -34,20 +44,20 @@ $$("iframe[data-src]").forEach(f => mapIO.observe(f));
 /* ---- booking form ---- */
 const form = $("#bookForm"), dateIn = $("#date"), hint = $("#dateHint"), err = $("#formErr");
 const pick = $("#datePick");
-const MON_BN = ["জানু","ফেব্রু","মার্চ","এপ্রিল","মে","জুন","জুলাই","আগস্ট","সেপ্টে","অক্টো","নভে","ডিসে"];
+const MON_BN = EN ? ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"] : ["জানু","ফেব্রু","মার্চ","এপ্রিল","মে","জুন","জুলাই","আগস্ট","সেপ্টে","অক্টো","নভে","ডিসে"];
 const ymd = d => d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0");
 function chosen(){ const r = $("input[name=chamber]:checked"); return r ? r.value : ""; }
 // chip-style date picker: next open days of the chosen chamber (works in every browser, incl. Facebook in-app)
 function renderDates(){
   const c = chosen(); hint.classList.remove("warn");
-  if (!c) { pick.innerHTML = ""; dateIn.value = ""; hint.textContent = "প্রথমে চেম্বার নির্বাচন করুন; সেই চেম্বার খোলা থাকার তারিখগুলো এখানে দেখাবে।"; return; }
+  if (!c) { pick.innerHTML = ""; dateIn.value = ""; hint.textContent = T("প্রথমে চেম্বার নির্বাচন করুন; সেই চেম্বার খোলা থাকার তারিখগুলো এখানে দেখাবে।", "Please choose a chamber first; its open dates will appear here."); return; }
   const ch = CHAMBERS[c], prev = dateIn.value, out = [];
   const d = new Date(); d.setHours(0, 0, 0, 0);
   for (let i = 0; out.length < 8 && i < 60; i++, d.setDate(d.getDate() + 1)) if (ch.days.includes(d.getDay())) out.push(new Date(d));
   const todayKey = ymd(new Date());
-  pick.innerHTML = out.map(x => { const k = ymd(x); return '<button type="button" role="radio" data-d="' + k + '" class="' + (k === prev ? "on" : "") + '"><b>' + DAY_BN[x.getDay()].replace("বার", "") + (k === todayKey ? " (আজ)" : "") + '</b><span>' + bnDigits(x.getDate()) + " " + MON_BN[x.getMonth()] + '</span></button>'; }).join("");
+  pick.innerHTML = out.map(x => { const k = ymd(x); return '<button type="button" role="radio" data-d="' + k + '" class="' + (k === prev ? "on" : "") + '"><b>' + (EN ? DAY_BN[x.getDay()].slice(0, 3) : DAY_BN[x.getDay()].replace("বার", "")) + (k === todayKey ? T(" (আজ)", " (today)") : "") + '</b><span>' + bnDigits(x.getDate()) + " " + MON_BN[x.getMonth()] + '</span></button>'; }).join("");
   if (!out.some(x => ymd(x) === prev)) dateIn.value = "";
-  hint.textContent = "এই চেম্বারে রোগী দেখা হয়: " + ch.daysText + "। তারিখ না বেছে নিলেও চলবে।";
+  hint.textContent = T("এই চেম্বারে রোগী দেখা হয়: " + ch.daysText + "। তারিখ না বেছে নিলেও চলবে।", "Consultation days at this chamber: " + ch.daysText + ". Choosing a date is optional.");
 }
 pick.addEventListener("click", e => {
   const b = e.target.closest("button"); if (!b) return;
@@ -67,14 +77,26 @@ $$("[data-chamber]").forEach(a => a.addEventListener("click", () => {
 form.addEventListener("submit", e => {
   e.preventDefault(); err.textContent = "";
   const c = chosen(), name = $("#name").value.trim(), phone = enDigits($("#phone").value.trim());
-  if (!c) return err.textContent = "অনুগ্রহ করে একটি চেম্বার নির্বাচন করুন।";
-  if (!name) { $("#name").focus(); return err.textContent = "অনুগ্রহ করে রোগীর নাম লিখুন।"; }
-  if (!/^(\+?88)?01[3-9]\d{8}$/.test(phone.replace(/[\s-]/g, ""))) { $("#phone").focus(); return err.textContent = "সঠিক মোবাইল নম্বর লিখুন (যেমন: 01XXXXXXXXX)।"; }
-  if (!checkDate()) return err.textContent = "নির্বাচিত তারিখে এই চেম্বার বন্ধ থাকে। অন্য তারিখ বেছে নিন।";
+  if (!c) return err.textContent = T("অনুগ্রহ করে একটি চেম্বার নির্বাচন করুন।", "Please choose a chamber.");
+  if (!name) { $("#name").focus(); return err.textContent = T("অনুগ্রহ করে রোগীর নাম লিখুন।", "Please enter the patient's name."); }
+  if (!/^(\+?88)?01[3-9]\d{8}$/.test(phone.replace(/[\s-]/g, ""))) { $("#phone").focus(); return err.textContent = T("সঠিক মোবাইল নম্বর লিখুন (যেমন: 01XXXXXXXXX)।", "Please enter a valid Bangladeshi mobile number (e.g. 01XXXXXXXXX)."); }
+  if (!checkDate()) return err.textContent = T("নির্বাচিত তারিখে এই চেম্বার বন্ধ থাকে। অন্য তারিখ বেছে নিন।", "This chamber is closed on the selected date. Please choose another date.");
   const ch = CHAMBERS[c], age = $("#age").value.trim(), svc = $("#service").value, msg = $("#msg").value.trim();
   let dateTxt = "";
   if (dateIn.value) { const [y, m, d] = dateIn.value.split("-"); dateTxt = bnDigits(`${d}/${m}/${y}`) + " (" + DAY_BN[new Date(dateIn.value + "T00:00:00").getDay()] + ")"; }
-  const lines = [
+  const lines = EN ? [
+    "*Appointment request* (from the website, English)",
+    "",
+    "Chamber: " + ch.name,
+    "Patient name: " + name,
+    "Mobile: " + phone,
+    age ? ("Age: " + age) : null,
+    svc ? ("Treatment: " + svc) : null,
+    dateTxt ? ("Preferred date: " + dateTxt) : null,
+    msg ? ("Problem / treatment wanted: " + msg) : null,
+    "",
+    "Please confirm the serial. Thank you."
+  ] : [
     "*অ্যাপয়েন্টমেন্টের অনুরোধ* (ওয়েবসাইট থেকে)",
     "",
     "চেম্বার: " + ch.name,
@@ -94,7 +116,7 @@ form.addEventListener("submit", e => {
   if (!mobile) { try { w = window.open(url, "_blank"); } catch (_) {} }
   if (!w) window.location.href = url;
   err.style.color = "var(--green)";
-  err.textContent = "হোয়াটসঅ্যাপ খুলছে… বার্তাটি পাঠাতে হোয়াটসঅ্যাপে Send চাপুন। না খুললে সরাসরি কল করুন: ০১৭২৮-৮৮৫৫৫০";
+  err.textContent = T("হোয়াটসঅ্যাপ খুলছে… বার্তাটি পাঠাতে হোয়াটসঅ্যাপে Send চাপুন। না খুললে সরাসরি কল করুন: ০১৭২৮-৮৮৫৫৫০", "Opening WhatsApp… press Send in WhatsApp to deliver the message. If it does not open, please call 01728-885550.");
 });
 form.addEventListener("input", () => { if (err.style.color) { err.style.color = ""; err.textContent = ""; } });
 
@@ -102,7 +124,7 @@ form.addEventListener("input", () => { if (err.style.color) { err.style.color = 
 const fab = $("#fab"), fabBtn = $(".fab-btn");
 fabBtn.addEventListener("click", () => { const o = fab.classList.toggle("open"); fabBtn.setAttribute("aria-expanded", o); });
 document.addEventListener("click", e => { if (!fab.contains(e.target)) fab.classList.remove("open"); });
-$$("[data-wa]").forEach(a => { const ch = CHAMBERS[a.dataset.wa]; a.href = waLink(ch.wa, "হ্যালো, দি ডেন্টাল জোনের ওয়েবসাইট থেকে যোগাযোগ করছি। " + ch.name + " চেম্বারে সিরিয়াল সম্পর্কে জানতে চাই।"); });
+$$("[data-wa]").forEach(a => { const ch = CHAMBERS[a.dataset.wa]; a.href = waLink(ch.wa, T("হ্যালো, দি ডেন্টাল জোনের ওয়েবসাইট থেকে যোগাযোগ করছি। " + ch.name + " চেম্বারে সিরিয়াল সম্পর্কে জানতে চাই।", "Hello, I am contacting you from The Dental Zone website. I would like to book a serial at " + ch.name + ".")); });
 
 /* ---- lightbox ---- */
 const lb = $("#lb"), lbIn = $(".lb-in");
@@ -125,7 +147,7 @@ $$("[data-count]").forEach(el => cIO.observe(el));
   const cv = $("#exCanvas"); if (!cv || !window.DZExplainer) return;
   const X = window.DZExplainer, ctx = cv.getContext("2d"), tabs = $("#exTabs"), play = $("#exPlay");
   const modeEl = $("#exMode"), vid = $("#exVideo");
-  const SHORT = ["রুট ক্যানেল", "ক্রাউন (ক্যাপ)", "ইমপ্ল্যান্ট", "ব্রেস", "ভিনিয়ার"];
+  const SHORT = EN ? ["Root Canal", "Crown", "Implant", "Braces", "Veneers"] : ["রুট ক্যানেল", "ক্রাউন (ক্যাপ)", "ইমপ্ল্যান্ট", "ব্রেস", "ভিনিয়ার"];
   let cur = 0, t0 = performance.now(), paused = false, pausedAt = 0, visible = false, mode = "anim";
   const VIDS = {};
   tabs.innerHTML = X.SCENES.map((s, i) => '<button type="button" role="tab" class="' + (i ? "" : "on") + '"><i>' + bnDigits(i + 1) + '</i>' + (SHORT[i] || s.title) + '</button>').join("");
@@ -137,7 +159,7 @@ $$("[data-count]").forEach(el => cIO.observe(el));
     modeEl.hidden = !id;
     $$("button", modeEl).forEach(b => b.classList.toggle("on", b.dataset.m === mode));
     if (mode === "video") {
-      vid.innerHTML = '<button type="button" class="ex-yt" aria-label="ভিডিও চালান"><img src="https://img.youtube.com/vi/' + id + '/hqdefault.jpg" alt=""><span></span></button>';
+      vid.innerHTML = '<button type="button" class="ex-yt" aria-label="' + T("ভিডিও চালান", "Play video") + '"><img src="https://img.youtube.com/vi/' + id + '/hqdefault.jpg" alt=""><span></span></button>';
       $(".ex-yt", vid).onclick = () => { vid.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0&modestbranding=1" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>'; };
       vid.hidden = false; play.hidden = true;
     } else { vid.innerHTML = ""; vid.hidden = true; play.hidden = false; }
@@ -154,7 +176,7 @@ $$("[data-count]").forEach(el => cIO.observe(el));
     }
     requestAnimationFrame(loop);
   };
-  fetch("data/explainers.json", { cache: "no-cache" })
+  fetch(ROOT + "data/explainers.json", { cache: "no-cache" })
     .then(r => { if (!r.ok) throw 0; return r.json(); })
     .catch(() => window.EXPLAINER_FALLBACK || {})
     .then(d => { (d.videos || []).forEach(v => { if (v.show !== false && v.youtube) VIDS[v.key] = v.youtube; }); setMode("video"); });
@@ -163,7 +185,7 @@ $$("[data-count]").forEach(el => cIO.observe(el));
 
 /* ---- before/after sliders + gallery (data/gallery.json, edited from the admin panel) ---- */
 const esc = s => String(s || "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
-const rel = p => String(p || "").replace(/^\//, "");
+const rel = p => { p = String(p || ""); return !p || /^https?:/.test(p) ? p : ROOT + p.replace(/^\//, ""); };
 function ytId(u){ const m = String(u).match(/(?:youtu\.be\/|v=|shorts\/|embed\/)([\w-]{11})/); return m ? m[1] : ""; }
 
 let goToSlide = () => {};
@@ -177,7 +199,7 @@ function setupSliders(all, order){
     idx = (i + list.length) % list.length; const it = list[idx];
     bImg.src = it.before; aImg.src = it.after; ba.classList.remove("fade"); void ba.offsetWidth; ba.classList.add("fade");
     $("#baTitle").textContent = it.title; $("#baCap").textContent = it.caption || "";
-    $("#baCount").textContent = "কেস " + bnDigits(idx + 1) + " / " + bnDigits(list.length) + (it.category ? " · " + it.category : "");
+    $("#baCount").textContent = T("কেস ", "Case ") + bnDigits(idx + 1) + " / " + bnDigits(list.length) + (it.category ? " · " + catName(it.category) : "");
     $$("#baThumbs button").forEach((b, k) => b.classList.toggle("on", k === idx));
     setPos(50);
   }
@@ -189,7 +211,7 @@ function setupSliders(all, order){
   }
   if (fb) {
     const cs = ["সব", ...order.filter(c => all.some(i => i.category === c))];
-    fb.innerHTML = cs.length > 2 ? cs.map((c, i) => '<button type="button" class="' + (i ? "" : "on") + '" data-c="' + esc(c) + '">' + esc(c) + '</button>').join("") : "";
+    fb.innerHTML = cs.length > 2 ? cs.map((c, i) => '<button type="button" class="' + (i ? "" : "on") + '" data-c="' + esc(c) + '">' + esc(catName(c)) + '</button>').join("") : "";
     fb.onclick = e => { const b = e.target.closest("button"); if (!b) return; $$("button", fb).forEach(x => x.classList.toggle("on", x === b)); setCat(b.dataset.c); show(0); };
   }
   setCat("সব");
@@ -214,23 +236,23 @@ function setupSliders(all, order){
 }
 
 function renderGallery(data){
-  const all = (data.items || []).filter(i => i.show !== false).map(i => ({ ...i, image: rel(i.image), video: rel(i.video), before: rel(i.before), after: rel(i.after) }));
+  const all = (data.items || []).filter(i => i.show !== false).map(i => ({ ...i, title: (EN && i.title_en) || i.title, caption: EN ? (i.caption_en || "") : i.caption, image: rel(i.image), video: rel(i.video), before: rel(i.before), after: rel(i.after) }));
   const sl = all.filter(i => i.type === "slider" && i.before && i.after);
   setupSliders(sl, data.categories || []);
   const items = all.filter(i => i.type === "slider" ? sl.includes(i) : (i.image || i.video || i.link));
   const cats = ["সব", ...(data.categories || []).filter(c => items.some(i => i.category === c))];
   const fEl = $("#gFilters"), gEl = $("#gGrid");
-  fEl.innerHTML = cats.length > 2 ? cats.map((c, i) => '<button type="button" class="' + (i ? "" : "on") + '" data-c="' + esc(c) + '">' + esc(c) + '</button>').join("") : "";
+  fEl.innerHTML = cats.length > 2 ? cats.map((c, i) => '<button type="button" class="' + (i ? "" : "on") + '" data-c="' + esc(c) + '">' + esc(catName(c)) + '</button>').join("") : "";
   const LIMIT = 8; let showAll = false, curCat = "সব";
   function card(it){
     const yt = it.type === "youtube" ? ytId(it.link) : "";
-    const thumb = it.image || (yt ? "https://img.youtube.com/vi/" + yt + "/hqdefault.jpg" : "assets/img/og-cover.jpg");
+    const thumb = it.image || (yt ? "https://img.youtube.com/vi/" + yt + "/hqdefault.jpg" : ROOT + "assets/img/og-cover.jpg");
     const isVid = it.type === "video" || it.type === "youtube" || it.type === "facebook";
     const media = it.type === "slider"
-      ? '<div class="g-split"><img src="' + esc(it.before) + '" alt="' + esc(it.title) + ' (আগে)" loading="lazy"><span>আগে</span></div><div class="g-split"><img src="' + esc(it.after) + '" alt="' + esc(it.title) + ' (পরে)" loading="lazy"><span class="a">পরে</span></div>'
+      ? '<div class="g-split"><img src="' + esc(it.before) + '" alt="' + esc(it.title) + ' (' + T("আগে", "before") + ')" loading="lazy"><span>' + T("আগে", "Before") + '</span></div><div class="g-split"><img src="' + esc(it.after) + '" alt="' + esc(it.title) + ' (' + T("পরে", "after") + ')" loading="lazy"><span class="a">' + T("পরে", "After") + '</span></div>'
       : '<img src="' + esc(thumb) + '" alt="' + esc(it.title) + '" loading="lazy">';
     return '<figure class="g-item reveal"><div class="g-media' + (it.type === "slider" ? " g-ba" : "") + '" data-n="' + items.indexOf(it) + '">' + media
-      + (it.category ? '<span class="g-tag">' + esc(it.category) + '</span>' : "")
+      + (it.category ? '<span class="g-tag">' + esc(catName(it.category)) + '</span>' : "")
       + (isVid ? '<div class="g-play"><span></span></div>' : "")
       + '</div><figcaption class="g-cap"><b>' + esc(it.title) + '</b>' + (it.caption ? '<small>' + esc(it.caption) + '</small>' : "") + '</figcaption></figure>';
   }
@@ -238,8 +260,8 @@ function renderGallery(data){
     curCat = cat;
     const list = cat === "সব" ? items : items.filter(i => i.category === cat);
     const vis = showAll || cat !== "সব" ? list : list.slice(0, LIMIT);
-    let html = vis.length ? vis.map(card).join("") : '<div class="g-empty">এই বিভাগে এখনো কোনো ছবি যোগ করা হয়নি।</div>';
-    if (!showAll && cat === "সব" && list.length > LIMIT) html += '<div class="g-empty"><button type="button" class="btn btn-ghost" id="gMore">আরও দেখুন (' + bnDigits(list.length - LIMIT) + 'টি)</button></div>';
+    let html = vis.length ? vis.map(card).join("") : '<div class="g-empty">' + T("এই বিভাগে এখনো কোনো ছবি যোগ করা হয়নি।", "No cases have been added to this category yet.") + '</div>';
+    if (!showAll && cat === "সব" && list.length > LIMIT) html += '<div class="g-empty"><button type="button" class="btn btn-ghost" id="gMore">' + T("আরও দেখুন (" + bnDigits(list.length - LIMIT) + "টি)", "Show " + (list.length - LIMIT) + " more") + '</button></div>';
     gEl.innerHTML = html; observeReveal(gEl);
     const m = $("#gMore"); if (m) m.onclick = () => { showAll = true; draw(curCat); };
   }
@@ -255,7 +277,7 @@ function renderGallery(data){
   };
   draw("সব");
 }
-fetch("data/gallery.json", { cache: "no-cache" })
+fetch(ROOT + "data/gallery.json", { cache: "no-cache" })
   .then(r => { if (!r.ok) throw 0; return r.json(); })
   .catch(() => window.GALLERY_FALLBACK || { items: [] })
   .then(renderGallery);

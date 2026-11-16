@@ -27,3 +27,8 @@
 
 ---
 English summary: static one-page site. Gallery content lives in data/gallery.json and is edited through Pages CMS (free, GitHub login) using .pages.yml. WhatsApp numbers are in script.js (CHAMBERS). Opening index.html directly from a folder uses data/gallery-fallback.js; regenerate it from gallery.json if you edit the JSON by hand.
+
+## English version (/en/)
+The site has an English page at drjyotirmoy.com/en/ with a বাংলা / English switch (flags) in the header; Bangla stays the default.
+- Page text lives in `en/index.html` (Bangla text in `index.html`). Change both when you edit wording, phone numbers or hours.
+- Each gallery item has `English title` and `English caption` fields in the admin panel. If they are empty, the English page shows the Bangla title.

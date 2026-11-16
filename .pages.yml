@@ -57,6 +57,12 @@ content:
           - name: caption
             label: ছোট বিবরণ (রোগীর নাম লিখবেন না)
             type: string
+          - name: title_en
+            label: English title (ইংরেজি সংস্করণের শিরোনাম)
+            type: string
+          - name: caption_en
+            label: English caption (ইংরেজি সংস্করণের বিবরণ)
+            type: string
           - name: show
             label: ওয়েবসাইটে দেখাবে
             type: boolean

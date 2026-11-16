@@ -450,3 +450,18 @@ footer a:hover{color:#fff}
 .g-split+.g-split{border-top:3px solid #fff}
 .g-split span{position:absolute;right:8px;bottom:8px;background:var(--red,#C8202A);color:#fff;font-size:.75rem;font-weight:700;padding:.1em .6em;border-radius:999px}
 .g-split span.a{background:var(--green,#167A34)}
+/* language switch */
+.lang{display:flex;align-items:center;gap:2px;background:var(--sky,#EAF3FD);border:1px solid var(--line);border-radius:999px;padding:3px;margin-left:auto}
+.lang a{display:inline-flex;align-items:center;gap:.35em;padding:.28em .7em;border-radius:999px;font-size:.85rem;font-weight:600;color:var(--blue-d);line-height:1.2;white-space:nowrap}
+.lang a.on{background:#fff;box-shadow:0 1px 4px rgba(16,58,110,.18)}
+.lang a:not(.on):hover{color:var(--blue)}
+.lang .flag{width:20px;height:12px;border-radius:2px;flex:none;box-shadow:0 0 0 .5px rgba(0,0,0,.2)}
+.header .lang{order:2;margin-left:1rem}
+.header .menu-btn{order:3}
+@media (max-width:860px){.header .lang{margin-left:auto}.lang a{padding:.28em .55em;font-size:.8rem}}
+@media (max-width:420px){.lang a span{display:none}.lang a{padding:.4em .5em}}
+html[lang=en] body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+html[lang=en] .hero h1,html[lang=en] .sec-head h2,html[lang=en] .h2,html[lang=en] .doctor h2{font-family:Georgia,"Times New Roman",serif;letter-spacing:-.01em}
+.nav a{white-space:nowrap}
+.nav .btn{white-space:nowrap}
+@media (min-width:861px) and (max-width:1380px){.lang a{padding:.3em .5em;font-size:.78rem}.header .lang{margin-left:.6rem}.nav{gap:1rem}.nav a{font-size:.93rem}}

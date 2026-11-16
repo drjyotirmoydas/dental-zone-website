@@ -38,6 +38,16 @@
       "পাতলা ভিনিয়ার বসানো হয়",
       "উজ্জ্বল ও সমান হাসি" ] }
   ];
+  /* English version (/en/): same animation, English text */
+  const EN = typeof document !== "undefined" && document.documentElement.lang === "en";
+  const EN_TEXT = {
+    rct: ["Quality Root Canal Treatment", ["Infected nerve (pulp) inside the tooth", "Canals cleaned and disinfected", "Canals sealed with filling material", "Tooth protected with a crown"]],
+    crown: ["Advanced Crown & Bridge", ["Broken or weakened tooth", "Tooth prepared for the crown", "Precise crown made from impressions", "Crown fitted: strong as before"]],
+    implant: ["Dental Implant", ["Gap left by a missing tooth", "Implant placed in bone, CBCT-planned", "Implant fuses with the bone", "Abutment and crown: a new tooth"]],
+    braces: ["Braces for Crooked, Gapped and Protruding Teeth", ["Crooked and crowded teeth", "A bracket is fixed on each tooth", "Gentle wire pressure moves the teeth", "Straight teeth, a confident smile"]],
+    veneer: ["Veneers", ["Discoloured, chipped or gapped front teeth", "Front surface minimally prepared", "Thin veneer bonded in place", "A bright, even smile"]]
+  };
+  if (EN) SCENES.forEach(sc => { const t = EN_TEXT[sc.key]; if (t) { sc.en = "How it works"; sc.title = t[0]; sc.steps = t[1]; } });
   const STEP = 3.2, HOLD = 1.6;
   const duration = i => SCENES[i].steps.length * STEP + HOLD;
 
@@ -66,7 +76,7 @@
       ctx.fillStyle = on ? C.blue : "#fff"; ctx.strokeStyle = C.blue; ctx.lineWidth = 3;
       ctx.beginPath(); ctx.arc(x0 + gap * i, 196, i === step ? 22 : 17, 0, 7); ctx.fill(); ctx.stroke();
       ctx.fillStyle = on ? "#fff" : C.blue; ctx.font = `700 22px ${FONT}`; ctx.textBaseline = "middle";
-      ctx.fillText("১২৩৪৫৬"[i], x0 + gap * i, 198); ctx.textBaseline = "alphabetic";
+      ctx.fillText((EN ? "123456" : "১২৩৪৫৬")[i], x0 + gap * i, 198); ctx.textBaseline = "alphabetic";
     }
     const cap = sc.steps[step], a = ease(local / .35);
     ctx.save(); ctx.globalAlpha = a; ctx.translate(0, (1 - a) * 18);
@@ -76,7 +86,7 @@
     ctx.fillStyle = "#fff"; ctx.fillText(cap, W / 2, 958);
     ctx.restore();
     ctx.fillStyle = "#5F7896"; ctx.font = `500 24px ${FONT}`;
-    ctx.fillText("দি ডেন্টাল জোন  ·  ডা. জ্যোতির্ময় দাস", W / 2, 1050);
+    ctx.fillText(EN ? "The Dental Zone  ·  Dr. Jyotirmoy Das" : "দি ডেন্টাল জোন  ·  ডা. জ্যোতির্ময় দাস", W / 2, 1050);
   }
   function rr(ctx, x, y, w, h, r) { ctx.beginPath(); ctx.moveTo(x + r, y); ctx.arcTo(x + w, y, x + w, y + h, r); ctx.arcTo(x + w, y + h, x, y + h, r); ctx.arcTo(x, y + h, x, y, r); ctx.arcTo(x, y, x + w, y, r); ctx.closePath(); }
 

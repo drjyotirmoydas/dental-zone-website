@@ -17,7 +17,9 @@
       "video": "",
       "link": "",
       "caption": "ব্রেসে আঁকাবাঁকা ও ভিড় করা দাঁত সোজা করা হয়েছে",
-      "show": true
+      "show": true,
+      "title_en": "Severely crowded teeth aligned",
+      "caption_en": "Crooked, crowded teeth straightened with braces"
     },
     {
       "title": "আঁকাবাঁকা ও ভেতরে ঢোকা দাঁত",
@@ -29,7 +31,9 @@
       "video": "",
       "link": "",
       "caption": "ব্রেস চিকিৎসা সম্পন্ন",
-      "show": true
+      "show": true,
+      "title_en": "Crooked and inward-placed teeth",
+      "caption_en": "Braces treatment completed"
     },
     {
       "title": "সামনের দাঁতের মাঝের ফাঁকা: ব্রেসে বন্ধ",
@@ -41,7 +45,9 @@
       "video": "",
       "link": "",
       "caption": "মাঝের ফাঁকা ও অন্যান্য ফাঁকা ব্রেসে বন্ধ",
-      "show": true
+      "show": true,
+      "title_en": "Midline gap closed with braces",
+      "caption_en": "Central and other gaps closed with braces"
     },
     {
       "title": "সামনের দাঁতের ফাঁকা বন্ধে কসমেটিক ফিলিং",
@@ -53,7 +59,9 @@
       "video": "",
       "link": "",
       "caption": "ডায়াস্টেমা ক্লোজার (দাঁতের মাঝের ফাঁকা বন্ধ করা), দাঁতের রঙের কম্পোজিট দিয়ে",
-      "show": true
+      "show": true,
+      "title_en": "Front tooth gap closed with cosmetic filling",
+      "caption_en": "Diastema closure with tooth-coloured composite"
     },
     {
       "title": "সামনের দাঁতের বড় ফাঁকা",
@@ -65,7 +73,9 @@
       "video": "",
       "link": "",
       "caption": "ডায়াস্টেমা ক্লোজার",
-      "show": true
+      "show": true,
+      "title_en": "Large gap between front teeth",
+      "caption_en": "Diastema closure"
     },
     {
       "title": "ভাঙা সামনের দাঁতে ভিনিয়ার",
@@ -77,7 +87,9 @@
       "video": "",
       "link": "",
       "caption": "দাঁতের আকার ও সৌন্দর্য ফিরিয়ে আনা",
-      "show": true
+      "show": true,
+      "title_en": "Veneer on a broken front tooth",
+      "caption_en": "Shape and appearance of the tooth restored"
     },
     {
       "title": "সামনের দাঁতের ক্ষয়ে কসমেটিক ফিলিং",
@@ -89,7 +101,9 @@
       "video": "",
       "link": "",
       "caption": "দাঁতের রঙের কম্পোজিট দিয়ে সামনের দুই দাঁতের ক্ষয় ও দাগ সারানো হয়েছে; ছবিটি এক মাস পরের ফলো-আপে তোলা",
-      "show": true
+      "show": true,
+      "title_en": "Cosmetic filling for decayed front teeth",
+      "caption_en": "Decay and stains on two front teeth restored with tooth-coloured composite; photo taken at the one-month review"
     },
     {
       "title": "ভাঙা সামনের দাঁতে রুট ক্যানেল ও ক্রাউন",
@@ -101,7 +115,9 @@
       "video": "",
       "link": "",
       "caption": "রুট ক্যানেলের পর ক্রাউনে ফিরে পাওয়া স্বাভাবিক হাসি",
-      "show": true
+      "show": true,
+      "title_en": "Root canal and crown on a broken front tooth",
+      "caption_en": "A natural smile restored with a crown after root canal treatment"
     },
     {
       "title": "দুটি ইমপ্ল্যান্টের ওপর সামনের দাঁতের ব্রিজ",
@@ -113,7 +129,9 @@
       "video": "",
       "link": "",
       "caption": "হারানো সামনের দাঁত ইমপ্ল্যান্ট দিয়ে প্রতিস্থাপন",
-      "show": true
+      "show": true,
+      "title_en": "Front bridge on two implants",
+      "caption_en": "Missing front teeth replaced with implants"
     },
     {
       "title": "আঁকাবাঁকা দাঁত থেকে সুন্দর সারি",
@@ -125,7 +143,9 @@
       "video": "",
       "link": "",
       "caption": "ব্রেস চিকিৎসা সম্পন্ন, দাঁত সুবিন্যস্ত",
-      "show": true
+      "show": true,
+      "title_en": "From crooked teeth to an even row",
+      "caption_en": "Braces treatment completed, teeth aligned"
     },
     {
       "title": "এলোমেলো দাঁত থেকে সুবিন্যস্ত হাসি",
@@ -137,7 +157,9 @@
       "video": "",
       "link": "",
       "caption": "ব্রেস চিকিৎসা সম্পন্ন",
-      "show": true
+      "show": true,
+      "title_en": "From irregular teeth to an aligned smile",
+      "caption_en": "Braces treatment completed"
     },
     {
       "title": "ফাঁকা ও অসমান দাঁত: ব্রেসের পর",
@@ -149,7 +171,9 @@
       "video": "",
       "link": "",
       "caption": "ব্রেস চিকিৎসা সম্পন্ন, সামনের দাঁতের ফাঁকা বন্ধ",
-      "show": true
+      "show": true,
+      "title_en": "Gapped, uneven teeth: after braces",
+      "caption_en": "Braces treatment completed, front gaps closed"
     },
     {
       "title": "সামনের দাঁতের বড় ফাঁকা বন্ধ",
@@ -161,7 +185,9 @@
       "video": "",
       "link": "",
       "caption": "ব্রেস চিকিৎসা সম্পন্ন",
-      "show": true
+      "show": true,
+      "title_en": "Large front gap closed",
+      "caption_en": "Braces treatment completed"
     },
     {
       "title": "ব্রেস: চিকিৎসার আগে, শুরুতে ও শেষে",
@@ -173,7 +199,9 @@
       "video": "",
       "link": "",
       "caption": "",
-      "show": true
+      "show": true,
+      "title_en": "Braces: before, at the start and at the end",
+      "caption_en": ""
     },
     {
       "title": "উঁচু ও ফাঁকা সামনের দাঁত",
@@ -185,7 +213,9 @@
       "video": "",
       "link": "",
       "caption": "ব্রেস চিকিৎসা সম্পন্ন",
-      "show": true
+      "show": true,
+      "title_en": "Protruding, gapped front teeth",
+      "caption_en": "Braces treatment completed"
     },
     {
       "title": "আঁকাবাঁকা সামনের দাঁত সোজা হলো",
@@ -197,7 +227,9 @@
       "video": "",
       "link": "",
       "caption": "ব্রেস চিকিৎসা সম্পন্ন",
-      "show": true
+      "show": true,
+      "title_en": "Crooked front teeth straightened",
+      "caption_en": "Braces treatment completed"
     },
     {
       "title": "ভিড় করা ও উঁচু দাঁত: ব্রেসের পর",
@@ -209,7 +241,9 @@
       "video": "",
       "link": "",
       "caption": "ব্রেস চিকিৎসা সম্পন্ন, উঁচু ও ভিড় করা দাঁত সোজা",
-      "show": true
+      "show": true,
+      "title_en": "Crowded, protruding teeth: after braces",
+      "caption_en": "Braces treatment completed, crowding and protrusion corrected"
     },
     {
       "title": "অসমান ও ফাঁকা সামনের দাঁত সারিবদ্ধ",
@@ -221,7 +255,9 @@
       "video": "",
       "link": "",
       "caption": "ব্রেসে দাঁতের সারি ও ফাঁকা ঠিক করা হয়েছে",
-      "show": true
+      "show": true,
+      "title_en": "Uneven, gapped front teeth aligned",
+      "caption_en": "Tooth alignment and gaps corrected with braces"
     },
     {
       "title": "ফাঁকা ও উঁচু সামনের দাঁত: ব্রেসের পর",
@@ -233,7 +269,9 @@
       "video": "",
       "link": "",
       "caption": "ফাঁকা বন্ধ করে উঁচু দাঁত পেছনে আনা হয়েছে",
-      "show": true
+      "show": true,
+      "title_en": "Gapped, protruding front teeth: after braces",
+      "caption_en": "Gaps closed and protruding teeth retracted"
     },
     {
       "title": "ভিড় করা দাঁত সুবিন্যস্ত",
@@ -245,7 +283,9 @@
       "video": "",
       "link": "",
       "caption": "ব্রেস চিকিৎসা সম্পন্ন",
-      "show": true
+      "show": true,
+      "title_en": "Crowded teeth aligned",
+      "caption_en": "Braces treatment completed"
     },
     {
       "title": "আঁকাবাঁকা সামনের দাঁত: ব্রেসের পর",
@@ -257,7 +297,9 @@
       "video": "",
       "link": "",
       "caption": "ব্রেস চিকিৎসা সম্পন্ন",
-      "show": true
+      "show": true,
+      "title_en": "Crooked front teeth: after braces",
+      "caption_en": "Braces treatment completed"
     },
     {
       "title": "আঁকাবাঁকা দাঁতের ব্রেস চিকিৎসা",
@@ -269,7 +311,9 @@
       "video": "",
       "link": "",
       "caption": "ব্রেস চিকিৎসা সম্পন্ন",
-      "show": true
+      "show": true,
+      "title_en": "Braces for crooked teeth",
+      "caption_en": "Braces treatment completed"
     },
     {
       "title": "দাঁতের মাঝের ফাঁকা: ব্রেসে সমাধান",
@@ -281,7 +325,9 @@
       "video": "",
       "link": "",
       "caption": "ব্রেস চিকিৎসা সম্পন্ন",
-      "show": true
+      "show": true,
+      "title_en": "Gap between teeth: corrected with braces",
+      "caption_en": "Braces treatment completed"
     },
     {
       "title": "তিন দিক থেকে আগে ও পরে",
@@ -293,7 +339,9 @@
       "video": "",
       "link": "",
       "caption": "",
-      "show": true
+      "show": true,
+      "title_en": "Before and after from three angles",
+      "caption_en": ""
     },
     {
       "title": "সামনের দাঁতের ফাঁকা: ব্রেসে সমাধান",
@@ -305,7 +353,9 @@
       "video": "",
       "link": "",
       "caption": "",
-      "show": true
+      "show": true,
+      "title_en": "Front tooth gap: corrected with braces",
+      "caption_en": ""
     },
     {
       "title": "আঁকাবাঁকা দাঁত: ধাপে ধাপে",
@@ -317,7 +367,9 @@
       "video": "",
       "link": "",
       "caption": "",
-      "show": true
+      "show": true,
+      "title_en": "Crooked teeth: step by step",
+      "caption_en": ""
     },
     {
       "title": "ব্রেস চিকিৎসার অগ্রগতি",
@@ -329,7 +381,9 @@
       "video": "",
       "link": "",
       "caption": "",
-      "show": true
+      "show": true,
+      "title_en": "Progress of braces treatment",
+      "caption_en": ""
     },
     {
       "title": "ব্রেস চিকিৎসার পরিবর্তন (ভিডিও)",
@@ -341,7 +395,9 @@
       "after": "",
       "link": "",
       "caption": "শুরু থেকে শেষ",
-      "show": true
+      "show": true,
+      "title_en": "Braces transformation (video)",
+      "caption_en": "From start to finish"
     },
     {
       "title": "উঁচু ও ফাঁকা দাঁতের পরিবর্তন (ভিডিও)",
@@ -353,7 +409,9 @@
       "after": "",
       "link": "",
       "caption": "শুরু থেকে শেষ",
-      "show": true
+      "show": true,
+      "title_en": "Protruding, gapped teeth transformation (video)",
+      "caption_en": "From start to finish"
     },
     {
       "title": "ডায়াস্টেমা ক্লোজার (দাঁতের মাঝের ফাঁকা বন্ধ করা)",
@@ -365,7 +423,9 @@
       "video": "",
       "link": "",
       "caption": "সামনের দাঁতের একাধিক ফাঁকা বন্ধ করে সুন্দর সারি",
-      "show": true
+      "show": true,
+      "title_en": "Diastema closure (closing gaps between teeth)",
+      "caption_en": "Multiple front gaps closed for an even smile"
     },
     {
       "title": "সামনের দুই দাঁতের মাঝের ফাঁকা",
@@ -377,7 +437,9 @@
       "video": "",
       "link": "",
       "caption": "ডায়াস্টেমা ক্লোজার (দাঁতের মাঝের ফাঁকা বন্ধ করা)",
-      "show": true
+      "show": true,
+      "title_en": "Gap between the two front teeth",
+      "caption_en": "Diastema closure (closing the gap between teeth)"
     },
     {
       "title": "ফাঁকা ও ছোট সামনের দাঁত",
@@ -389,7 +451,9 @@
       "video": "",
       "link": "",
       "caption": "কসমেটিক রেস্টোরেশন",
-      "show": true
+      "show": true,
+      "title_en": "Gapped, small front teeth",
+      "caption_en": "Cosmetic restoration"
     },
     {
       "title": "সামনের দুই দাঁতের মাঝের ফাঁকা বন্ধ",
@@ -401,7 +465,9 @@
       "video": "",
       "link": "",
       "caption": "মিডলাইন ডায়াস্টেমা ক্লোজার",
-      "show": true
+      "show": true,
+      "title_en": "Gap between the two front teeth closed",
+      "caption_en": "Midline diastema closure"
     },
     {
       "title": "ফাঁকা ও ভাঙা কিনারার সামনের দাঁত",
@@ -413,7 +479,9 @@
       "video": "",
       "link": "",
       "caption": "কসমেটিক ফিলিংয়ে মাঝের ফাঁকা বন্ধ ও কিনারা পুনর্গঠন, একই দিনে",
-      "show": true
+      "show": true,
+      "title_en": "Gapped front teeth with chipped edges",
+      "caption_en": "Gap closed and edges rebuilt with cosmetic filling in a single visit"
     },
     {
       "title": "ডায়াস্টেমা ক্লোজার",
@@ -425,7 +493,9 @@
       "video": "",
       "link": "",
       "caption": "",
-      "show": true
+      "show": true,
+      "title_en": "Diastema closure",
+      "caption_en": ""
     },
     {
       "title": "বিবর্ণ ও ফাঁকা সামনের দাঁত",
@@ -437,7 +507,9 @@
       "video": "",
       "link": "",
       "caption": "দাঁতের রং, আকার ও ফাঁকা সংশোধন",
-      "show": true
+      "show": true,
+      "title_en": "Discoloured, gapped front teeth",
+      "caption_en": "Colour, shape and gaps corrected"
     },
     {
       "title": "নিচের সামনের দাঁতের ফাঁকা বন্ধ",
@@ -449,7 +521,9 @@
       "video": "",
       "link": "",
       "caption": "ডায়াস্টেমা ক্লোজার (দাঁতের মাঝের ফাঁকা বন্ধ করা)",
-      "show": true
+      "show": true,
+      "title_en": "Lower front gap closed",
+      "caption_en": "Diastema closure (closing the gap between teeth)"
     },
     {
       "title": "ভাঙা ও ফাঁকা সামনের দাঁত",
@@ -461,7 +535,9 @@
       "video": "",
       "link": "",
       "caption": "কসমেটিক রেস্টোরেশন",
-      "show": true
+      "show": true,
+      "title_en": "Broken, gapped front teeth",
+      "caption_en": "Cosmetic restoration"
     },
     {
       "title": "দাগযুক্ত ও অসমান সামনের দাঁতে কম্পোজিট ভিনিয়ার",
@@ -473,7 +549,9 @@
       "video": "",
       "link": "",
       "caption": "সাদা দাগ ও অসমান কিনারা কসমেটিক ফিলিংয়ে মসৃণ ও সমান করা হয়েছে",
-      "show": true
+      "show": true,
+      "title_en": "Composite veneers on stained, uneven front teeth",
+      "caption_en": "White spots and uneven edges smoothed with cosmetic filling"
     },
     {
       "title": "টুথ হোয়াইটেনিং: শেড D3 থেকে A1",
@@ -485,7 +563,9 @@
       "video": "",
       "link": "",
       "caption": "শেড গাইডে দাঁতের রঙের পার্থক্য",
-      "show": true
+      "show": true,
+      "title_en": "Teeth whitening: shade D3 to A1",
+      "caption_en": "Change in tooth shade on the shade guide"
     },
     {
       "title": "টুথ হোয়াইটেনিং (Ultradent USA)",
@@ -497,7 +577,9 @@
       "video": "",
       "link": "",
       "caption": "",
-      "show": true
+      "show": true,
+      "title_en": "Teeth whitening (Ultradent USA)",
+      "caption_en": ""
     },
     {
       "title": "রুট ক্যানেল ও সামনের দাঁতের পুনর্গঠন",
@@ -509,7 +591,9 @@
       "video": "",
       "link": "",
       "caption": "",
-      "show": true
+      "show": true,
+      "title_en": "Root canal and front tooth rebuild",
+      "caption_en": ""
     },
     {
       "title": "জটিল একাধিক ক্যানেলের রুট ক্যানেল",
@@ -521,7 +605,9 @@
       "video": "",
       "link": "",
       "caption": "",
-      "show": true
+      "show": true,
+      "title_en": "Complex multi-canal root canal",
+      "caption_en": ""
     },
     {
       "title": "রি-রুট ক্যানেলে ভাঙা ফাইল অপসারণ",
@@ -533,7 +619,9 @@
       "video": "",
       "link": "",
       "caption": "Broken File Retrieval: ক্যানেলে ভাঙা ফাইল বের করে পুনরায় রুট ক্যানেল",
-      "show": true
+      "show": true,
+      "title_en": "Broken file removed in root canal re-treatment",
+      "caption_en": "Broken file retrieved from the canal, followed by re-treatment"
     },
     {
       "title": "মাড়ির দাঁতের রুট ক্যানেল",
@@ -545,7 +633,9 @@
       "video": "",
       "link": "",
       "caption": "",
-      "show": true
+      "show": true,
+      "title_en": "Root canal on a molar",
+      "caption_en": ""
     },
     {
       "title": "অল-অন-ফোর: পুরো চোয়ালে ইমপ্ল্যান্ট",
@@ -557,7 +647,9 @@
       "video": "",
       "link": "",
       "caption": "আগে, ইমপ্ল্যান্টের এক্স-রে, প্রস্থেসিস ও পরে",
-      "show": true
+      "show": true,
+      "title_en": "All-on-4: full-arch implants",
+      "caption_en": "Before, implant X-ray, prosthesis and after"
     },
     {
       "title": "ইমপ্ল্যান্টের ওপর স্থায়ী ক্রাউন",
@@ -569,7 +661,9 @@
       "video": "",
       "link": "",
       "caption": "ক্রাউন বসানোর পর মুখের ভেতরের ছবি ও এক্স-রে",
-      "show": true
+      "show": true,
+      "title_en": "Permanent crown on an implant",
+      "caption_en": "Intraoral photo and X-ray after crown placement"
     },
     {
       "title": "জীবাণুমুক্ত পরিবেশে ইমপ্ল্যান্ট সার্জারি",
@@ -581,7 +675,9 @@
       "video": "",
       "link": "",
       "caption": "সার্জিক্যাল টিম, ইমপ্ল্যান্ট স্থাপন ও পরের এক্স-রে",
-      "show": true
+      "show": true,
+      "title_en": "Implant surgery in a sterile setting",
+      "caption_en": "Surgical team, implant placement and post-operative X-ray"
     },
     {
       "title": "পাশাপাশি দুটি ইমপ্ল্যান্ট স্থাপন",
@@ -593,7 +689,9 @@
       "video": "",
       "link": "",
       "caption": "পরিকল্পিত অবস্থানে ড্রিলিং থেকে ইমপ্ল্যান্ট স্থাপন পর্যন্ত",
-      "show": true
+      "show": true,
+      "title_en": "Two adjacent implants placed",
+      "caption_en": "From guided drilling to implant placement"
     },
     {
       "title": "ইমপ্ল্যান্ট থেকে ক্রাউন: ধাপে ধাপে এক্স-রে",
@@ -605,7 +703,9 @@
       "video": "",
       "link": "",
       "caption": "পেছনের দাঁতে ইমপ্ল্যান্ট স্থাপন, অ্যাবাটমেন্ট ও চূড়ান্ত ক্রাউন",
-      "show": true
+      "show": true,
+      "title_en": "Implant to crown: X-rays step by step",
+      "caption_en": "Back tooth implant, abutment and final crown"
     },
     {
       "title": "পেছনের দাঁতে ইমপ্ল্যান্ট ক্রাউন",
@@ -617,7 +717,9 @@
       "video": "",
       "link": "",
       "caption": "ইমপ্ল্যান্টের ওপর স্থায়ী ক্রাউন বসানো",
-      "show": true
+      "show": true,
+      "title_en": "Implant crown on a back tooth",
+      "caption_en": "Permanent crown fitted on the implant"
     },
     {
       "title": "ইমপ্ল্যান্ট স্থাপন: এক্স-রে",
@@ -629,7 +731,9 @@
       "video": "",
       "link": "",
       "caption": "বিভিন্ন রোগীর ইমপ্ল্যান্ট স্থাপনের পরের এক্স-রে",
-      "show": true
+      "show": true,
+      "title_en": "Implant placement: X-rays",
+      "caption_en": "Post-placement X-rays of different patients"
     },
     {
       "title": "ডেন্টাল ইমপ্ল্যান্ট সার্জারি ও এক্স-রে",
@@ -641,7 +745,9 @@
       "video": "",
       "link": "",
       "caption": "",
-      "show": true
+      "show": true,
+      "title_en": "Dental implant surgery and X-ray",
+      "caption_en": ""
     },
     {
       "title": "দাঁত তোলার পর বোন গ্রাফটিং",
@@ -653,7 +759,9 @@
       "video": "",
       "link": "",
       "caption": "",
-      "show": true
+      "show": true,
+      "title_en": "Bone grafting after extraction",
+      "caption_en": ""
     },
     {
       "title": "ভাঙা সামনের দাঁতে জিরকোনিয়া ক্রাউন",
@@ -665,7 +773,9 @@
       "video": "",
       "link": "",
       "caption": "দাঁতের রঙের সঙ্গে মিলিয়ে মেটালমুক্ত জিরকোনিয়া ক্রাউন",
-      "show": true
+      "show": true,
+      "title_en": "Zirconia crown on a broken front tooth",
+      "caption_en": "Metal-free zirconia crown matched to the natural tooth colour"
     },
     {
       "title": "ভাঙা ও ক্ষয়ে যাওয়া দাঁত থেকে নতুন হাসি",
@@ -677,7 +787,9 @@
       "video": "",
       "link": "",
       "caption": "ক্রাউন-ব্রিজে পূর্ণ মুখের চিকিৎসা",
-      "show": true
+      "show": true,
+      "title_en": "A new smile from broken, worn teeth",
+      "caption_en": "Full-mouth rehabilitation with crowns and bridges"
     },
     {
       "title": "হারানো সামনের দাঁতে ফিক্সড ব্রিজ",
@@ -689,7 +801,9 @@
       "video": "",
       "link": "",
       "caption": "ফিক্সড পারশিয়াল ডেনচার (ব্রিজ)",
-      "show": true
+      "show": true,
+      "title_en": "Fixed bridge for a missing front tooth",
+      "caption_en": "Fixed partial denture (bridge)"
     },
     {
       "title": "কমপ্লিট ডেনচারে ফিরে পাওয়া হাসি",
@@ -701,7 +815,9 @@
       "video": "",
       "link": "",
       "caption": "আগে, তৈরি ডেনচার ও বসানোর পরের হাসি",
-      "show": true
+      "show": true,
+      "title_en": "A smile restored with complete dentures",
+      "caption_en": "Before, the finished denture and the smile after fitting"
     },
     {
       "title": "নতুন ডেনচারে ফিরে আসা হাসি",
@@ -713,7 +829,9 @@
       "video": "",
       "link": "",
       "caption": "",
-      "show": true
+      "show": true,
+      "title_en": "A smile restored with new dentures",
+      "caption_en": ""
     },
     {
       "title": "দাঁতহীন মুখে সম্পূর্ণ ডেনচার",
@@ -725,7 +843,9 @@
       "video": "",
       "link": "",
       "caption": "আগে, তৈরি ডেনচার ও পরে",
-      "show": true
+      "show": true,
+      "title_en": "Complete dentures for an edentulous mouth",
+      "caption_en": "Before, the finished denture and after"
     },
     {
       "title": "ইমপ্ল্যান্ট স্থাপনের দিন",
@@ -737,7 +857,9 @@
       "video": "",
       "link": "",
       "caption": "সামনের দাঁতে ইমপ্ল্যান্ট ও হিলিং অ্যাবাটমেন্ট",
-      "show": false
+      "show": false,
+      "title_en": "Implant placement day",
+      "caption_en": "Front tooth implant with healing abutment"
     },
     {
       "title": "উঁচু দাঁতের ব্রেস চিকিৎসা",
@@ -749,7 +871,9 @@
       "video": "",
       "link": "",
       "caption": "",
-      "show": false
+      "show": false,
+      "title_en": "Braces for protruding teeth",
+      "caption_en": ""
     },
     {
       "title": "আঁকাবাঁকা দাঁত: আগে ও পরে",
@@ -761,7 +885,9 @@
       "video": "",
       "link": "",
       "caption": "",
-      "show": false
+      "show": false,
+      "title_en": "Crooked teeth: before and after",
+      "caption_en": ""
     },
     {
       "title": "উঁচু ও ফাঁকা দাঁত থেকে সুন্দর হাসি",
@@ -773,7 +899,9 @@
       "video": "",
       "link": "",
       "caption": "",
-      "show": false
+      "show": false,
+      "title_en": "From protruding, gapped teeth to a confident smile",
+      "caption_en": ""
     },
     {
       "title": "দাঁতের মাঝের ফাঁকা বন্ধ",
@@ -785,7 +913,9 @@
       "video": "",
       "link": "",
       "caption": "ডায়াস্টেমা ক্লোজার",
-      "show": false
+      "show": false,
+      "title_en": "Gap between teeth closed",
+      "caption_en": "Diastema closure"
     },
     {
       "title": "ক্ষয়ে যাওয়া সামনের দাঁতে ভিনিয়ার",
@@ -797,7 +927,9 @@
       "video": "",
       "link": "",
       "caption": "ল্যামিনেটেড ভিনিয়ার",
-      "show": false
+      "show": false,
+      "title_en": "Veneers on worn front teeth",
+      "caption_en": "Laminate veneers"
     },
     {
       "title": "দাঁতের মাঝের ফাঁকা বন্ধ",
@@ -809,7 +941,9 @@
       "video": "",
       "link": "",
       "caption": "",
-      "show": false
+      "show": false,
+      "title_en": "Gap between teeth closed",
+      "caption_en": ""
     },
     {
       "title": "রুট ক্যানেল রি-ট্রিটমেন্ট: ধাপে ধাপে এক্স-রে",
@@ -821,7 +955,9 @@
       "after": "",
       "link": "",
       "caption": "এমটিএ প্লাগসহ",
-      "show": false
+      "show": false,
+      "title_en": "Root canal re-treatment: X-rays step by step",
+      "caption_en": "With MTA plug"
     },
     {
       "title": "ক্যানেল থেকে ভাঙা ফাইল বের করা",
@@ -833,7 +969,9 @@
       "video": "",
       "link": "",
       "caption": "",
-      "show": false
+      "show": false,
+      "title_en": "Broken file removed from the canal",
+      "caption_en": ""
     }
   ]
 }
