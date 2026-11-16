@@ -144,11 +144,23 @@
       "category": "কসমেটিক",
       "type": "slider",
       "before": "/assets/media/cases/pt-composite-before.jpg",
-      "after": "/assets/media/cases/pt-composite-after.jpg",
+      "after": "/assets/media/cases/pt-composite-after2.jpg",
       "image": "",
       "video": "",
       "link": "",
-      "caption": "দাঁতের রঙের কম্পোজিট দিয়ে সামনের দুই দাঁতের ক্ষয় ও দাগ সারানো হয়েছে",
+      "caption": "দাঁতের রঙের কম্পোজিট দিয়ে সামনের দুই দাঁতের ক্ষয় ও দাগ সারানো হয়েছে; ছবিটি এক মাস পরের ফলো-আপে তোলা",
+      "show": true
+    },
+    {
+      "title": "দাগযুক্ত ও অসমান সামনের দাঁতে কম্পোজিট ভিনিয়ার",
+      "category": "কসমেটিক",
+      "type": "slider",
+      "before": "/assets/media/cases/pt-composite2-before.jpg",
+      "after": "/assets/media/cases/pt-composite2-after.jpg",
+      "image": "",
+      "video": "",
+      "link": "",
+      "caption": "সাদা দাগ ও অসমান কিনারা কসমেটিক ফিলিংয়ে মসৃণ ও সমান করা হয়েছে",
       "show": true
     },
     {
