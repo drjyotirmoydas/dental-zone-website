@@ -444,3 +444,9 @@ footer a:hover{color:#fff}
 .results .feat .feat-head{margin-bottom:1.6rem}
 .results .g-head:first-of-type{margin-top:0}
 @media (max-width:620px){.results .feat{padding:1.6rem 1rem 1.4rem;border-radius:18px}}
+
+.g-ba{display:flex;flex-direction:column;cursor:pointer}
+.g-split{position:relative;flex:1;overflow:hidden}
+.g-split+.g-split{border-top:3px solid #fff}
+.g-split span{position:absolute;right:8px;bottom:8px;background:var(--red,#C8202A);color:#fff;font-size:.75rem;font-weight:700;padding:.1em .6em;border-radius:999px}
+.g-split span.a{background:var(--green,#167A34)}

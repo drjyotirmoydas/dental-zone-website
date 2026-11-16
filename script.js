@@ -166,6 +166,7 @@ const esc = s => String(s || "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": 
 const rel = p => String(p || "").replace(/^\//, "");
 function ytId(u){ const m = String(u).match(/(?:youtu\.be\/|v=|shorts\/|embed\/)([\w-]{11})/); return m ? m[1] : ""; }
 
+let goToSlide = () => {};
 function setupSliders(all, order){
   const wrap = $("#baWrap"), fb = $("#baFilters"); if (!all.length) { wrap.style.display = "none"; if (fb) fb.style.display = "none"; return; }
   let list = all;
@@ -192,6 +193,11 @@ function setupSliders(all, order){
     fb.onclick = e => { const b = e.target.closest("button"); if (!b) return; $$("button", fb).forEach(x => x.classList.toggle("on", x === b)); setCat(b.dataset.c); show(0); };
   }
   setCat("সব");
+  goToSlide = it => {
+    if (fb) $$("button", fb).forEach((x, k) => x.classList.toggle("on", k === 0));
+    setCat("সব"); show(Math.max(0, all.indexOf(it)));
+    wrap.scrollIntoView({ behavior: "smooth", block: "center" });
+  };
   $("#baPrev").onclick = () => show(idx - 1); $("#baNext").onclick = () => show(idx + 1);
   const move = e => { const r = ba.getBoundingClientRect(); setPos((e.clientX - r.left) / r.width * 100); };
   ba.addEventListener("pointerdown", e => { drag = true; ba.setPointerCapture(e.pointerId); move(e); });
@@ -209,8 +215,9 @@ function setupSliders(all, order){
 
 function renderGallery(data){
   const all = (data.items || []).filter(i => i.show !== false).map(i => ({ ...i, image: rel(i.image), video: rel(i.video), before: rel(i.before), after: rel(i.after) }));
-  setupSliders(all.filter(i => i.type === "slider" && i.before && i.after), data.categories || []);
-  const items = all.filter(i => i.type !== "slider" && (i.image || i.video || i.link));
+  const sl = all.filter(i => i.type === "slider" && i.before && i.after);
+  setupSliders(sl, data.categories || []);
+  const items = all.filter(i => i.type === "slider" ? sl.includes(i) : (i.image || i.video || i.link));
   const cats = ["সব", ...(data.categories || []).filter(c => items.some(i => i.category === c))];
   const fEl = $("#gFilters"), gEl = $("#gGrid");
   fEl.innerHTML = cats.length > 2 ? cats.map((c, i) => '<button type="button" class="' + (i ? "" : "on") + '" data-c="' + esc(c) + '">' + esc(c) + '</button>').join("") : "";
@@ -219,7 +226,10 @@ function renderGallery(data){
     const yt = it.type === "youtube" ? ytId(it.link) : "";
     const thumb = it.image || (yt ? "https://img.youtube.com/vi/" + yt + "/hqdefault.jpg" : "assets/img/og-cover.jpg");
     const isVid = it.type === "video" || it.type === "youtube" || it.type === "facebook";
-    return '<figure class="g-item reveal"><div class="g-media" data-n="' + items.indexOf(it) + '"><img src="' + esc(thumb) + '" alt="' + esc(it.title) + '" loading="lazy">'
+    const media = it.type === "slider"
+      ? '<div class="g-split"><img src="' + esc(it.before) + '" alt="' + esc(it.title) + ' (আগে)" loading="lazy"><span>আগে</span></div><div class="g-split"><img src="' + esc(it.after) + '" alt="' + esc(it.title) + ' (পরে)" loading="lazy"><span class="a">পরে</span></div>'
+      : '<img src="' + esc(thumb) + '" alt="' + esc(it.title) + '" loading="lazy">';
+    return '<figure class="g-item reveal"><div class="g-media' + (it.type === "slider" ? " g-ba" : "") + '" data-n="' + items.indexOf(it) + '">' + media
       + (it.category ? '<span class="g-tag">' + esc(it.category) + '</span>' : "")
       + (isVid ? '<div class="g-play"><span></span></div>' : "")
       + '</div><figcaption class="g-cap"><b>' + esc(it.title) + '</b>' + (it.caption ? '<small>' + esc(it.caption) + '</small>' : "") + '</figcaption></figure>';
@@ -237,6 +247,7 @@ function renderGallery(data){
   gEl.onclick = e => {
     const m = e.target.closest(".g-media"); if (!m) return;
     const it = items[+m.dataset.n];
+    if (it.type === "slider") return goToSlide(it);
     if (it.type === "video" && it.video) openLB('<video src="' + esc(it.video) + '" poster="' + esc(it.image) + '" controls autoplay playsinline></video>');
     else if (it.type === "youtube" && ytId(it.link)) openLB('<iframe src="https://www.youtube-nocookie.com/embed/' + ytId(it.link) + '?autoplay=1" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>');
     else if (it.link && it.type !== "photo") window.open(it.link, "_blank", "noopener");
