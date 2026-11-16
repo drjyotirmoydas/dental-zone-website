@@ -394,3 +394,20 @@ footer a:hover{color:#fff}
 .date-pick button.on{border-color:var(--blue);background:var(--blue);color:#fff;box-shadow:0 0 0 3px rgba(29,95,168,.18)}
 .date-pick button.on span{color:#dbe8f7}
 @media (max-width:520px){.date-pick{grid-template-columns:repeat(2,1fr)}}
+
+/* painless treatment focus */
+.pain-badge{display:inline-flex;align-items:center;gap:.7rem;background:var(--green-l);border:1.5px solid var(--green);border-radius:16px;padding:.55rem 1rem .55rem .7rem;margin:1rem 0 .4rem;text-align:left}
+.pain-badge svg{width:34px;height:34px;flex:none;color:var(--green);fill:none;stroke:currentColor;stroke-width:1.8}
+.pain-badge span{font-size:.92rem;color:var(--muted);line-height:1.4}
+.pain-badge b{display:block;color:var(--green);font-size:1.25rem;font-weight:800}
+.painless{background:linear-gradient(180deg,#fff,var(--green-l))}
+.pl-head{text-align:center;max-width:760px;margin:0 auto 2.2rem}
+.pl-head h2{font-family:var(--serif);font-weight:800;font-size:clamp(1.9rem,4vw,2.8rem);color:var(--green);margin:.3rem 0 .6rem}
+.pl-head p{color:var(--muted);font-size:1.05rem}
+.pl-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.1rem}
+.pl-item{background:#fff;border:1px solid var(--line);border-top:4px solid var(--green);border-radius:16px;padding:1.3rem 1.1rem;box-shadow:var(--shadow-s)}
+.pl-item svg{width:42px;height:42px;color:var(--green);fill:none;stroke:currentColor;stroke-width:1.7;margin-bottom:.5rem}
+.pl-item b{display:block;color:var(--blue-d);font-size:1.08rem;margin-bottom:.3rem}
+.pl-item span{color:var(--muted);font-size:.95rem;line-height:1.55}
+@media (max-width:1000px){.pl-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.pl-grid{grid-template-columns:1fr}}
