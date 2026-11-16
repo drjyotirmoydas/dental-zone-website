@@ -166,8 +166,9 @@ const esc = s => String(s || "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": 
 const rel = p => String(p || "").replace(/^\//, "");
 function ytId(u){ const m = String(u).match(/(?:youtu\.be\/|v=|shorts\/|embed\/)([\w-]{11})/); return m ? m[1] : ""; }
 
-function setupSliders(list){
-  const wrap = $("#baWrap"); if (!list.length) { wrap.style.display = "none"; return; }
+function setupSliders(all, order){
+  const wrap = $("#baWrap"), fb = $("#baFilters"); if (!all.length) { wrap.style.display = "none"; if (fb) fb.style.display = "none"; return; }
+  let list = all;
   const ba = $("#ba"), bImg = $(".ba-before", ba), aImg = $(".ba-after", ba);
   let idx = 0, drag = false, pos = 50;
   const setPos = p => { pos = Math.max(0, Math.min(100, p)); ba.style.setProperty("--pos", pos + "%"); };
@@ -179,8 +180,18 @@ function setupSliders(list){
     $$("#baThumbs button").forEach((b, k) => b.classList.toggle("on", k === idx));
     setPos(50);
   }
-  $("#baThumbs").innerHTML = list.map(it => '<button type="button" aria-label="' + esc(it.title) + '"><img src="' + esc(it.after) + '" alt="" loading="lazy"></button>').join("");
-  $$("#baThumbs button").forEach((b, i) => b.onclick = () => show(i));
+  function setCat(c){
+    list = c === "সব" ? all : all.filter(i => i.category === c);
+    $("#baThumbs").innerHTML = list.map(it => '<button type="button" aria-label="' + esc(it.title) + '"><img src="' + esc(it.after) + '" alt="" loading="lazy"></button>').join("");
+    $$("#baThumbs button").forEach((b, i) => b.onclick = () => show(i));
+    $("#baThumbs").scrollTop = 0; idx = 0;
+  }
+  if (fb) {
+    const cs = ["সব", ...order.filter(c => all.some(i => i.category === c))];
+    fb.innerHTML = cs.length > 2 ? cs.map((c, i) => '<button type="button" class="' + (i ? "" : "on") + '" data-c="' + esc(c) + '">' + esc(c) + '</button>').join("") : "";
+    fb.onclick = e => { const b = e.target.closest("button"); if (!b) return; $$("button", fb).forEach(x => x.classList.toggle("on", x === b)); setCat(b.dataset.c); show(0); };
+  }
+  setCat("সব");
   $("#baPrev").onclick = () => show(idx - 1); $("#baNext").onclick = () => show(idx + 1);
   const move = e => { const r = ba.getBoundingClientRect(); setPos((e.clientX - r.left) / r.width * 100); };
   ba.addEventListener("pointerdown", e => { drag = true; ba.setPointerCapture(e.pointerId); move(e); });
@@ -198,7 +209,7 @@ function setupSliders(list){
 
 function renderGallery(data){
   const all = (data.items || []).filter(i => i.show !== false).map(i => ({ ...i, image: rel(i.image), video: rel(i.video), before: rel(i.before), after: rel(i.after) }));
-  setupSliders(all.filter(i => i.type === "slider" && i.before && i.after));
+  setupSliders(all.filter(i => i.type === "slider" && i.before && i.after), data.categories || []);
   const items = all.filter(i => i.type !== "slider" && (i.image || i.video || i.link));
   const cats = ["সব", ...(data.categories || []).filter(c => items.some(i => i.category === c))];
   const fEl = $("#gFilters"), gEl = $("#gGrid");
