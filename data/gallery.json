@@ -8,6 +8,18 @@
   ],
   "items": [
     {
+      "title": "ভাঙা সামনের দাঁতে রুট ক্যানেল ও ক্রাউন",
+      "category": "রুট ক্যানেল",
+      "type": "slider",
+      "before": "/assets/media/cases/rct-front-before.jpg",
+      "after": "/assets/media/cases/rct-front-after.jpg",
+      "image": "",
+      "video": "",
+      "link": "",
+      "caption": "রুট ক্যানেলের পর ক্রাউনে ফিরে পাওয়া স্বাভাবিক হাসি",
+      "show": true
+    },
+    {
       "title": "রুট ক্যানেল রি-ট্রিটমেন্ট: ধাপে ধাপে এক্স-রে",
       "category": "রুট ক্যানেল",
       "type": "video",
