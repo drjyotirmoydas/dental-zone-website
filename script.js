@@ -75,14 +75,22 @@ form.addEventListener("submit", e => {
     "রোগীর নাম: " + name,
     "মোবাইল: " + bnDigits(phone),
     age ? ("বয়স: " + bnDigits(age)) : null,
-    svc ? ("চিকিৎসা/সমস্যা: " + svc) : null,
+    svc ? ("চিকিৎসার ধরন: " + svc) : null,
     dateTxt ? ("পছন্দের তারিখ: " + dateTxt) : null,
-    msg ? ("বিবরণ: " + msg) : null,
+    msg ? ("সমস্যা / যে চিকিৎসা চান: " + msg) : null,
     "",
     "অনুগ্রহ করে সিরিয়াল নিশ্চিত করুন। ধন্যবাদ।"
   ].filter(l => l !== null);
-  window.open(waLink(ch.wa, lines.join("\n")), "_blank", "noopener");
+  const url = waLink(ch.wa, lines.join("\n"));
+  // phones and in-app browsers (Facebook, Messenger) often block new windows: open WhatsApp in the same tab there
+  const mobile = /Android|iPhone|iPad|iPod|FBAN|FBAV|Instagram|Line\//i.test(navigator.userAgent);
+  let w = null;
+  if (!mobile) { try { w = window.open(url, "_blank"); } catch (_) {} }
+  if (!w) window.location.href = url;
+  err.style.color = "var(--green)";
+  err.textContent = "হোয়াটসঅ্যাপ খুলছে… বার্তাটি পাঠাতে হোয়াটসঅ্যাপে Send চাপুন। না খুললে সরাসরি কল করুন: ০১৭২৮-৮৮৫৫৫০";
 });
+form.addEventListener("input", () => { if (err.style.color) { err.style.color = ""; err.textContent = ""; } });
 
 /* ---- floating WhatsApp ---- */
 const fab = $("#fab"), fabBtn = $(".fab-btn");
@@ -223,3 +231,13 @@ fetch("data/gallery.json", { cache: "no-cache" })
   .then(r => { if (!r.ok) throw 0; return r.json(); })
   .catch(() => window.GALLERY_FALLBACK || { items: [] })
   .then(renderGallery);
+
+/* ---- links like drjyotirmoy.com/#appointment: land exactly on the section ---- */
+if (location.hash.length > 1) {
+  const tgt = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+  if (tgt) {
+    $$(".reveal", tgt).forEach(el => el.classList.add("in")); tgt.classList.add("in");
+    const go = () => tgt.scrollIntoView({ block: "start" });
+    document.fonts.ready.then(go); window.addEventListener("load", () => { go(); setTimeout(go, 400); });
+  }
+}

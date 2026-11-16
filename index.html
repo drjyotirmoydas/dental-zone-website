@@ -110,7 +110,7 @@
 <div class="trust">
  <div class="container">
   <div><svg><use href="#i-cap"/></svg><span><b>উচ্চতর ডিগ্রি</b><small>এম.এস. (প্রস্থোডন্টিক্স), এফ.সি.পি.এস. (শেষ পর্ব)</small></span></div>
-  <div><svg><use href="#i-hosp"/></svg><span><b>প্রাতিষ্ঠানিক অভিজ্ঞতা</b><small>বাংলাদেশ মেডিকেল বিশ্ববিদ্যালয় (পিজি হাসপাতাল)</small></span></div>
+  <div><svg><use href="#i-hosp"/></svg><span><b>প্রাতিষ্ঠানিক অভিজ্ঞতা</b><small>বাংলাদেশ মেডিকেল বিশ্ববিদ্যালয় (পিজি হাসপাতাল), ১৩ বছর ধরে কর্মরত</small></span></div>
   <div><svg><use href="#i-star"/></svg><span><b>বিশেষ প্রশিক্ষণ</b><small>অর্থোডন্টিক্স ও এন্ডোডন্টিক্স (ইন্ডিয়া), ইমপ্ল্যান্টোলজি</small></span></div>
   <div><svg><use href="#i-scan"/></svg><span><b>পরিকল্পিত চিকিৎসা</b><small>এক্স-রে ও সিবিসিটি দেখে চিকিৎসা পরিকল্পনা</small></span></div>
  </div>
@@ -289,7 +289,7 @@
    <h2 class="h2">হোয়াটসঅ্যাপে সিরিয়াল নিন</h2>
    <p>ফর্মটি পূরণ করলে আমাদের হোয়াটসঅ্যাপ নম্বরে (০১৭২৮-৮৮৫৫৫০) চেম্বারের নাম ও আপনার তথ্যসহ বার্তা তৈরি হয়ে যাবে।</p>
    <ol class="how">
-    <li><b>১</b><span>চেম্বার, আপনার নাম ও মোবাইল নম্বর দিন</span></li>
+    <li><b>১</b><span>চেম্বার, নাম, মোবাইল নম্বর ও আপনার সমস্যার কথা লিখুন</span></li>
     <li><b>২</b><span>"হোয়াটসঅ্যাপে পাঠান" চাপলে হোয়াটসঅ্যাপ খুলবে</span></li>
     <li><b>৩</b><span>হোয়াটসঅ্যাপে Send চাপুন; সিরিয়াল নিশ্চিত করে জানানো হবে</span></li>
    </ol>
@@ -315,7 +315,7 @@
     <div class="f"><label for="name">রোগীর নাম <i>*</i></label><input id="name" name="name" autocomplete="name" placeholder="আপনার নাম"></div>
     <div class="f"><label for="phone">মোবাইল নম্বর <i>*</i></label><input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="01XXXXXXXXX"></div>
     <div class="f"><label for="age">বয়স</label><input id="age" name="age" inputmode="numeric" placeholder="যেমন: ৩৫"></div>
-    <div class="f"><label for="service">চিকিৎসা / সমস্যা</label>
+    <div class="f"><label for="service">চিকিৎসার ধরন (ঐচ্ছিক)</label>
      <select id="service" name="service">
       <option value="">নির্বাচন করুন</option>
       <option>রুট ক্যানেল চিকিৎসা</option>
@@ -334,8 +334,8 @@
       <option>অন্যান্য</option>
      </select>
     </div>
+    <div class="f full"><label for="msg">আপনার সমস্যা বা কোন চিকিৎসা চান, লিখুন</label><textarea id="msg" name="msg" rows="4" placeholder="যেমন: নিচের বাম পাশের মাড়ির দাঁতে ৩ দিন ধরে ব্যথা, ঠান্ডা পানিতে শিরশির করে। অথবা: সামনের দাঁতের ফাঁকা বন্ধ করতে চাই।"></textarea><div class="hint">বাংলা বা ইংরেজিতে যেভাবে সুবিধা লিখুন; এই লেখাটি হোয়াটসঅ্যাপ বার্তায় চলে যাবে।</div></div>
     <div class="f full"><label for="date">পছন্দের তারিখ</label><input id="date" name="date" type="date"><div class="hint" id="dateHint">চেম্বার নির্বাচন করলে সেই চেম্বারের দিনগুলো এখানে দেখাবে।</div></div>
-    <div class="f full"><label for="msg">সমস্যার সংক্ষিপ্ত বিবরণ</label><textarea id="msg" name="msg" placeholder="যেমন: নিচের মাড়ির দাঁতে ব্যথা, ঠান্ডা লাগে…"></textarea></div>
    </div>
    <div class="err" id="formErr" role="alert"></div>
    <button type="submit" class="btn btn-wa"><svg><use href="#i-wa"/></svg>হোয়াটসঅ্যাপে পাঠান</button>
