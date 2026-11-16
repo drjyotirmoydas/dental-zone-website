@@ -56,6 +56,30 @@
       "show": true
     },
     {
+      "title": "ভিড় করা ও উঁচু দাঁত: ব্রেসের পর",
+      "category": "ব্রেস",
+      "type": "slider",
+      "before": "/assets/media/cases/ortho-o11-before.jpg",
+      "after": "/assets/media/cases/ortho-o11-after.jpg",
+      "image": "",
+      "video": "",
+      "link": "",
+      "caption": "ব্রেস চিকিৎসা সম্পন্ন, উঁচু ও ভিড় করা দাঁত সোজা",
+      "show": true
+    },
+    {
+      "title": "আঁকাবাঁকা দাঁত থেকে সুন্দর সারি",
+      "category": "ব্রেস",
+      "type": "slider",
+      "before": "/assets/media/cases/ortho-o12-before.jpg",
+      "after": "/assets/media/cases/ortho-o12-after.jpg",
+      "image": "",
+      "video": "",
+      "link": "",
+      "caption": "ব্রেস চিকিৎসা সম্পন্ন, দাঁত সুবিন্যস্ত",
+      "show": true
+    },
+    {
       "title": "ভাঙা ও ক্ষয়ে যাওয়া দাঁত থেকে নতুন হাসি",
       "category": "ক্রাউন ও ডেনচার",
       "type": "slider",
@@ -65,6 +89,30 @@
       "video": "",
       "link": "",
       "caption": "ক্রাউন-ব্রিজে পূর্ণ মুখের চিকিৎসা",
+      "show": true
+    },
+    {
+      "title": "দুটি ইমপ্ল্যান্টের ওপর সামনের দাঁতের ব্রিজ",
+      "category": "ইমপ্ল্যান্ট ও সার্জারি",
+      "type": "slider",
+      "before": "/assets/media/cases/pf-implant-bridge-before.jpg",
+      "after": "/assets/media/cases/pf-implant-bridge-after.jpg",
+      "image": "",
+      "video": "",
+      "link": "",
+      "caption": "হারানো সামনের দাঁত ইমপ্ল্যান্ট দিয়ে প্রতিস্থাপন",
+      "show": true
+    },
+    {
+      "title": "পেছনের দাঁতে ইমপ্ল্যান্ট ক্রাউন",
+      "category": "ইমপ্ল্যান্ট ও সার্জারি",
+      "type": "slider",
+      "before": "/assets/media/cases/pf-implant-crown-before.jpg",
+      "after": "/assets/media/cases/pf-implant-crown-after.jpg",
+      "image": "",
+      "video": "",
+      "link": "",
+      "caption": "ইমপ্ল্যান্টের ওপর স্থায়ী ক্রাউন বসানো",
       "show": true
     },
     {
@@ -152,6 +200,18 @@
       "show": true
     },
     {
+      "title": "ভাঙা সামনের দাঁতে ভিনিয়ার",
+      "category": "কসমেটিক",
+      "type": "slider",
+      "before": "/assets/media/cases/pf-veneer2-before.jpg",
+      "after": "/assets/media/cases/pf-veneer2-after.jpg",
+      "image": "",
+      "video": "",
+      "link": "",
+      "caption": "দাঁতের আকার ও সৌন্দর্য ফিরিয়ে আনা",
+      "show": true
+    },
+    {
       "title": "এলোমেলো দাঁত থেকে সুবিন্যস্ত হাসি",
       "category": "ব্রেস",
       "type": "slider",
@@ -205,6 +265,18 @@
       "type": "slider",
       "before": "/assets/media/cases/ortho-o10-before.jpg",
       "after": "/assets/media/cases/ortho-o10-after.jpg",
+      "image": "",
+      "video": "",
+      "link": "",
+      "caption": "ব্রেস চিকিৎসা সম্পন্ন",
+      "show": true
+    },
+    {
+      "title": "আঁকাবাঁকা সামনের দাঁত: ব্রেসের পর",
+      "category": "ব্রেস",
+      "type": "slider",
+      "before": "/assets/media/cases/ortho-o13-before.jpg",
+      "after": "/assets/media/cases/ortho-o13-after.jpg",
       "image": "",
       "video": "",
       "link": "",
@@ -317,6 +389,18 @@
       "video": "",
       "link": "",
       "caption": "",
+      "show": true
+    },
+    {
+      "title": "দাঁতহীন মুখে কমপ্লিট ডেনচার",
+      "category": "ক্রাউন ও ডেনচার",
+      "type": "photo",
+      "before": "",
+      "after": "",
+      "image": "/assets/media/gallery/pf-cd-own.jpg",
+      "video": "",
+      "link": "",
+      "caption": "আগে, তৈরি ডেনচার ও বসানোর পরের হাসি",
       "show": true
     },
     {
