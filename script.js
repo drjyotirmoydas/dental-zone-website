@@ -33,28 +33,34 @@ $$("iframe[data-src]").forEach(f => mapIO.observe(f));
 
 /* ---- booking form ---- */
 const form = $("#bookForm"), dateIn = $("#date"), hint = $("#dateHint"), err = $("#formErr");
-const today = new Date(); today.setMinutes(today.getMinutes() - today.getTimezoneOffset());
-dateIn.min = today.toISOString().slice(0, 10);
-
+const pick = $("#datePick");
+const MON_BN = ["জানু","ফেব্রু","মার্চ","এপ্রিল","মে","জুন","জুলাই","আগস্ট","সেপ্টে","অক্টো","নভে","ডিসে"];
+const ymd = d => d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0");
 function chosen(){ const r = $("input[name=chamber]:checked"); return r ? r.value : ""; }
-function checkDate(){
+// chip-style date picker: next open days of the chosen chamber (works in every browser, incl. Facebook in-app)
+function renderDates(){
   const c = chosen(); hint.classList.remove("warn");
-  if (!c) { hint.textContent = "চেম্বার নির্বাচন করলে সেই চেম্বারের দিনগুলো এখানে দেখাবে।"; return true; }
-  const ch = CHAMBERS[c];
-  if (!dateIn.value) { hint.textContent = "এই চেম্বারে রোগী দেখা হয়: " + ch.daysText; return true; }
-  const d = new Date(dateIn.value + "T00:00:00").getDay();
-  if (!ch.days.includes(d)) {
-    hint.textContent = DAY_BN[d] + " এই চেম্বার বন্ধ থাকে। রোগী দেখা হয়: " + ch.daysText;
-    hint.classList.add("warn"); return false;
-  }
-  hint.textContent = DAY_BN[d] + " · " + ch.daysText; return true;
+  if (!c) { pick.innerHTML = ""; dateIn.value = ""; hint.textContent = "প্রথমে চেম্বার নির্বাচন করুন; সেই চেম্বার খোলা থাকার তারিখগুলো এখানে দেখাবে।"; return; }
+  const ch = CHAMBERS[c], prev = dateIn.value, out = [];
+  const d = new Date(); d.setHours(0, 0, 0, 0);
+  for (let i = 0; out.length < 8 && i < 60; i++, d.setDate(d.getDate() + 1)) if (ch.days.includes(d.getDay())) out.push(new Date(d));
+  const todayKey = ymd(new Date());
+  pick.innerHTML = out.map(x => { const k = ymd(x); return '<button type="button" role="radio" data-d="' + k + '" class="' + (k === prev ? "on" : "") + '"><b>' + DAY_BN[x.getDay()].replace("বার", "") + (k === todayKey ? " (আজ)" : "") + '</b><span>' + bnDigits(x.getDate()) + " " + MON_BN[x.getMonth()] + '</span></button>'; }).join("");
+  if (!out.some(x => ymd(x) === prev)) dateIn.value = "";
+  hint.textContent = "এই চেম্বারে রোগী দেখা হয়: " + ch.daysText + "। তারিখ না বেছে নিলেও চলবে।";
 }
-$$("input[name=chamber]").forEach(r => r.addEventListener("change", checkDate));
-dateIn.addEventListener("change", checkDate);
+pick.addEventListener("click", e => {
+  const b = e.target.closest("button"); if (!b) return;
+  const on = !b.classList.contains("on");
+  $$("button", pick).forEach(x => { x.classList.remove("on"); x.setAttribute("aria-checked", "false"); });
+  if (on) { b.classList.add("on"); b.setAttribute("aria-checked", "true"); dateIn.value = b.dataset.d; } else dateIn.value = "";
+});
+function checkDate(){ return true; }
+$$("input[name=chamber]").forEach(r => r.addEventListener("change", renderDates));
 
 // "WhatsApp" buttons on chamber cards pre-select that chamber
 $$("[data-chamber]").forEach(a => a.addEventListener("click", () => {
-  const r = $("#c-" + a.dataset.chamber); if (r) { r.checked = true; checkDate(); }
+  const r = $("#c-" + a.dataset.chamber); if (r) { r.checked = true; renderDates(); }
   setTimeout(() => $("#name").focus({ preventScroll: true }), 600);
 }));
 

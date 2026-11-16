@@ -335,7 +335,7 @@
      </select>
     </div>
     <div class="f full"><label for="msg">আপনার সমস্যা বা কোন চিকিৎসা চান, লিখুন</label><textarea id="msg" name="msg" rows="4" placeholder="যেমন: নিচের বাম পাশের মাড়ির দাঁতে ৩ দিন ধরে ব্যথা, ঠান্ডা পানিতে শিরশির করে। অথবা: সামনের দাঁতের ফাঁকা বন্ধ করতে চাই।"></textarea><div class="hint">বাংলা বা ইংরেজিতে যেভাবে সুবিধা লিখুন; এই লেখাটি হোয়াটসঅ্যাপ বার্তায় চলে যাবে।</div></div>
-    <div class="f full"><label for="date">পছন্দের তারিখ</label><input id="date" name="date" type="date"><div class="hint" id="dateHint">চেম্বার নির্বাচন করলে সেই চেম্বারের দিনগুলো এখানে দেখাবে।</div></div>
+    <div class="f full"><label>পছন্দের তারিখ</label><input id="date" name="date" type="hidden"><div class="date-pick" id="datePick" role="radiogroup" aria-label="পছন্দের তারিখ"></div><div class="hint" id="dateHint">প্রথমে চেম্বার নির্বাচন করুন; সেই চেম্বার খোলা থাকার তারিখগুলো এখানে দেখাবে।</div></div>
    </div>
    <div class="err" id="formErr" role="alert"></div>
    <button type="submit" class="btn btn-wa"><svg><use href="#i-wa"/></svg>হোয়াটসঅ্যাপে পাঠান</button>

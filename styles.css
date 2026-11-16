@@ -384,3 +384,13 @@ footer a:hover{color:#fff}
 .ex-yt img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block}
 .ex-yt span{position:absolute;left:50%;top:50%;width:76px;height:54px;margin:-27px 0 0 -38px;border-radius:14px;background:#C8202A;box-shadow:0 8px 24px rgba(0,0,0,.35)}
 .ex-yt span::after{content:"";position:absolute;left:31px;top:15px;border-left:20px solid #fff;border-top:12px solid transparent;border-bottom:12px solid transparent}
+
+/* date chips in the booking form */
+.date-pick{display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem}
+.date-pick:empty{display:none}
+.date-pick button{font:inherit;border:1.5px solid var(--line);background:var(--sky2);border-radius:12px;padding:.5rem .3rem;cursor:pointer;line-height:1.3;color:var(--ink,#16304f)}
+.date-pick button b{display:block;font-size:.9rem}
+.date-pick button span{display:block;font-size:.8rem;color:var(--muted)}
+.date-pick button.on{border-color:var(--blue);background:var(--blue);color:#fff;box-shadow:0 0 0 3px rgba(29,95,168,.18)}
+.date-pick button.on span{color:#dbe8f7}
+@media (max-width:520px){.date-pick{grid-template-columns:repeat(2,1fr)}}
