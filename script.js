@@ -142,14 +142,14 @@ $$("[data-count]").forEach(el => cIO.observe(el));
       vid.hidden = false; play.hidden = true;
     } else { vid.innerHTML = ""; vid.hidden = true; play.hidden = false; }
   }
-  $$("button", tabs).forEach((b, i) => b.onclick = () => { cur = i; t0 = performance.now(); paused = false; play.textContent = "❚❚"; mark(); setMode(mode); });
+  $$("button", tabs).forEach((b, i) => b.onclick = () => { cur = i; t0 = performance.now(); paused = false; play.textContent = "❚❚"; mark(); setMode("video"); });
   modeEl.onclick = e => { const b = e.target.closest("button"); if (b) { setMode(b.dataset.m); t0 = performance.now(); } };
   play.onclick = () => { paused = !paused; play.textContent = paused ? "▶" : "❚❚"; if (paused) pausedAt = performance.now(); else t0 += performance.now() - pausedAt; };
   new IntersectionObserver(es => { visible = es[0].isIntersecting; }).observe(cv);
   const loop = now => {
     if (visible && !paused && mode === "anim") {
       let t = (now - t0) / 1000;
-      if (t > X.duration(cur)) { cur = (cur + 1) % X.SCENES.length; t0 = now; t = 0; mark(); setMode("anim"); }
+      if (t > X.duration(cur)) { cur = (cur + 1) % X.SCENES.length; t0 = now; t = 0; mark(); setMode("video"); }
       X.draw(ctx, cur, t);
     }
     requestAnimationFrame(loop);
@@ -157,7 +157,7 @@ $$("[data-count]").forEach(el => cIO.observe(el));
   fetch("data/explainers.json", { cache: "no-cache" })
     .then(r => { if (!r.ok) throw 0; return r.json(); })
     .catch(() => window.EXPLAINER_FALLBACK || {})
-    .then(d => { (d.videos || []).forEach(v => { if (v.show !== false && v.youtube) VIDS[v.key] = v.youtube; }); setMode("anim"); });
+    .then(d => { (d.videos || []).forEach(v => { if (v.show !== false && v.youtube) VIDS[v.key] = v.youtube; }); setMode("video"); });
   document.fonts.ready.then(() => { X.draw(ctx, 0, 0.5); requestAnimationFrame(loop); });
 })();
 
