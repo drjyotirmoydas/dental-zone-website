@@ -317,7 +317,7 @@
       "after": "",
       "link": "",
       "caption": "এমটিএ প্লাগসহ",
-      "show": true
+      "show": false
     },
     {
       "title": "ভাঙা ফাইল অপসারণ (Broken File Retrieval)",
