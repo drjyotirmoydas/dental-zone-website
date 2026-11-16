@@ -1,0 +1,87 @@
+# Admin panel settings for Pages CMS (https://pagescms.org)
+# Sign in at https://app.pagescms.org with GitHub, open this website's repository,
+# then use "গ্যালারি" in the left menu to add, edit, hide or delete photos and videos.
+media:
+  input: assets/media
+  output: /assets/media
+  extensions: [jpg, jpeg, png, webp, mp4]
+content:
+  - name: gallery
+    label: গ্যালারি (চিকিৎসার ছবি ও ভিডিও)
+    type: file
+    path: data/gallery.json
+    format: json
+    fields:
+      - name: categories
+        label: বিভাগসমূহ (ফিল্টার বাটন)
+        type: string
+        list: true
+      - name: items
+        label: ছবি / ভিডিও
+        type: object
+        list: true
+        fields:
+          - name: title
+            label: শিরোনাম
+            type: string
+            required: true
+          - name: category
+            label: বিভাগ (উপরের বিভাগসমূহের একটি হুবহু লিখুন)
+            type: string
+          - name: type
+            label: ধরন
+            type: select
+            default: photo
+            options:
+              values:
+                - { value: slider, label: "আগে-পরে স্লাইডার (দুটি ছবি)" }
+                - { value: photo, label: "ছবি" }
+                - { value: video, label: "ভিডিও ফাইল (২৫ MB-এর কম)" }
+                - { value: youtube, label: "ইউটিউব লিংক" }
+                - { value: facebook, label: "ফেসবুক ভিডিও/পোস্ট লিংক" }
+          - name: before
+            label: আগের ছবি (শুধু স্লাইডারের জন্য)
+            type: image
+          - name: after
+            label: পরের ছবি (স্লাইডারের জন্য, আগের ছবির সমান মাপ)
+            type: image
+          - name: image
+            label: ছবি (ভিডিওর ক্ষেত্রে কভার ছবি)
+            type: image
+          - name: video
+            label: ভিডিও ফাইল (mp4)
+            type: file
+          - name: link
+            label: ইউটিউব / ফেসবুক লিংক
+            type: string
+          - name: caption
+            label: ছোট বিবরণ (রোগীর নাম লিখবেন না)
+            type: string
+          - name: show
+            label: ওয়েবসাইটে দেখাবে
+            type: boolean
+            default: true
+  - name: explainers
+    label: চিকিৎসার ৩ডি ভিডিও (ইউটিউব)
+    type: file
+    path: data/explainers.json
+    format: json
+    fields:
+      - name: videos
+        label: ভিডিও (প্রতিটি চিকিৎসার জন্য একটি ইউটিউব লিংক; খালি রাখলে শুধু অ্যানিমেশন দেখাবে)
+        type: object
+        list: true
+        fields:
+          - name: key
+            label: কোড (পরিবর্তন করবেন না)
+            type: string
+          - name: label
+            label: চিকিৎসা
+            type: string
+          - name: youtube
+            label: ইউটিউব লিংক
+            type: string
+          - name: show
+            label: দেখাবে
+            type: boolean
+            default: true
