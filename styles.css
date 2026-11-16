@@ -436,3 +436,10 @@ footer a:hover{color:#fff}
 .feat-tags{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem;margin-top:1rem}
 .feat-tags span{background:rgba(200,32,42,.9);color:#fff;border-radius:999px;padding:.3em .9em;font-size:.88rem;font-weight:600}
 .feat-note{text-align:center;color:#cfe0f5;font-size:.95rem;margin:1.6rem auto 0;max-width:760px;border-top:1px solid rgba(255,255,255,.15);padding-top:1rem}
+
+/* batch 3 */
+.doc-photo img{height:auto}
+.results .feat{background:var(--blue-d);color:#fff;border-radius:24px;padding:2.2rem 1.6rem 1.8rem;margin:0 0 2.6rem;box-shadow:var(--shadow)}
+.results .feat .feat-head{margin-bottom:1.6rem}
+.results .g-head:first-of-type{margin-top:0}
+@media (max-width:620px){.results .feat{padding:1.6rem 1rem 1.4rem;border-radius:18px}}
