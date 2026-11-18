@@ -764,6 +764,34 @@
       "caption_en": ""
     },
     {
+      "title": "হারানো দাঁতে উপর-নিচ দুই পাটির ডেনচার",
+      "category": "ক্রাউন ও ডেনচার",
+      "type": "slider",
+      "before": "/assets/media/cases/rpd01-before.jpg",
+      "after": "/assets/media/cases/rpd01-after.jpg",
+      "image": "",
+      "video": "",
+      "link": "",
+      "caption": "উপরে অ্যাক্রিলিক ডেনচার, নিচে মেটাল ফ্রেমের কাস্ট পারশিয়াল ডেনচার",
+      "show": true,
+      "title_en": "Upper and lower dentures for missing teeth",
+      "caption_en": "Acrylic upper denture and metal-frame cast partial denture below"
+    },
+    {
+      "title": "ডেনচার চিকিৎসা: আগে ও পরে (ভিডিও)",
+      "category": "ক্রাউন ও ডেনচার",
+      "type": "video",
+      "image": "/assets/media/gallery/denture-rpd01-video-poster.jpg",
+      "video": "/assets/media/gallery/denture-rpd01-video.mp4",
+      "before": "",
+      "after": "",
+      "link": "",
+      "caption": "ডেনচার ছাড়া, তৈরি ডেনচার ও পরার পরের হাসি",
+      "show": true,
+      "title_en": "Denture treatment: before and after (video)",
+      "caption_en": "Without dentures, the finished dentures and the smile after fitting"
+    },
+    {
       "title": "ভাঙা সামনের দাঁতে জিরকোনিয়া ক্রাউন",
       "category": "ক্রাউন ও ডেনচার",
       "type": "slider",
