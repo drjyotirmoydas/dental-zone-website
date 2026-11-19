@@ -465,3 +465,13 @@ html[lang=en] .hero h1,html[lang=en] .sec-head h2,html[lang=en] .h2,html[lang=en
 .nav a{white-space:nowrap}
 .nav .btn{white-space:nowrap}
 @media (min-width:861px) and (max-width:1380px){.lang a{padding:.3em .5em;font-size:.78rem}.header .lang{margin-left:.6rem}.nav{gap:1rem}.nav a{font-size:.93rem}}
+/* floating WhatsApp: the closed panel must never block taps on the page (mobile booking form fix) */
+.fab{pointer-events:none}
+.fab-btn,.fab-tip{pointer-events:auto}
+.fab-panel{visibility:hidden}
+.fab.open .fab-panel{visibility:visible;pointer-events:auto}
+.ch-pick{position:relative}
+.ch-pick input{left:0;top:0;width:1px;height:1px;margin:0}
+@media (max-width:640px){.topbar span{white-space:normal}.topbar .container{justify-content:center;text-align:center}}
+html[lang=en] .stats b.txt{font-size:clamp(1.5rem,6vw,3rem)}
+body{overflow-x:hidden}
