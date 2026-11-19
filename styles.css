@@ -475,3 +475,48 @@ html[lang=en] .hero h1,html[lang=en] .sec-head h2,html[lang=en] .h2,html[lang=en
 @media (max-width:640px){.topbar span{white-space:normal}.topbar .container{justify-content:center;text-align:center}}
 html[lang=en] .stats b.txt{font-size:clamp(1.5rem,6vw,3rem)}
 body{overflow-x:hidden}
+
+/* ---- mobile refinement (2026-11-19) ---- */
+@media (max-width:640px){
+  section{padding:2.8rem 0}
+  .sec-head{margin-bottom:1.6rem}
+  .sec-head p{font-size:.95rem}
+  .topbar{font-size:.78rem}
+  .topbar .container{padding:.35rem 0}
+  .header .container{padding:.45rem 0;gap:.6rem}
+  .hero .container{gap:.5rem}
+  .hero-text{padding-top:1.6rem}
+  .hero .lead{font-size:.97rem;line-height:1.75}
+  .hero-photo img{height:340px;margin-top:.8rem}
+  .hero-photo .ring{width:min(300px,86%);bottom:-30px}
+  .doc-photo{display:none}
+  .doctor .container{gap:0}
+  .trust div{padding:.85rem .3rem}
+  .trust svg{width:32px;height:32px}
+  .stats .container>div{padding:1.2rem .6rem}
+  .stats small{font-size:.88rem}
+  .pl-grid{gap:.7rem}
+  .pl-item{display:grid;grid-template-columns:34px 1fr;column-gap:.85rem;padding:.95rem 1rem;border-top-width:3px}
+  .pl-item svg{grid-row:span 2;width:32px;height:32px;margin:0}
+  .pl-item b{font-size:1rem;margin-bottom:.15rem}
+  .pl-item span{font-size:.9rem}
+  .svc-grid{gap:.7rem}
+  .svc{padding:1rem;gap:.8rem}
+  .svc .ic{width:44px;height:44px;border-radius:12px}
+  .svc .ic svg{width:26px;height:26px}
+  .svc h3{font-size:1rem}
+  .svc p{font-size:.88rem}
+  .steps{grid-template-columns:1fr 1fr;gap:.7rem}
+  .step{padding:1rem .9rem}
+  .step .n{font-size:1.6rem}
+  .step h3{font-size:.98rem;margin:.35rem 0 .2rem}
+  .step p{font-size:.85rem;line-height:1.55}
+  .map{aspect-ratio:2/1}
+  .fab{right:14px;bottom:14px}
+  .fab-btn{width:54px;height:54px}
+  .fab-btn svg{width:30px;height:30px}
+}
+@media (max-width:480px){
+  .brand small{display:none}
+  .brand b{font-size:1.08rem}
+}
