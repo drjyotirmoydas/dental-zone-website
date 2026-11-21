@@ -8,6 +8,20 @@
   ],
   "items": [
     {
+      "title": "ফাঁকা ও উঁচু সামনের দাঁত: ব্রেসের পর",
+      "category": "ব্রেস",
+      "type": "slider",
+      "before": "/assets/media/cases/ortho-o15-before-tc.jpg",
+      "after": "/assets/media/cases/ortho-o15-after-tc.jpg",
+      "image": "",
+      "video": "",
+      "link": "",
+      "caption": "ফাঁকা বন্ধ করে উঁচু দাঁত পেছনে আনা হয়েছে",
+      "show": true,
+      "title_en": "Gapped, protruding front teeth: after braces",
+      "caption_en": "Gaps closed and protruding teeth retracted"
+    },
+    {
       "title": "আঁকাবাঁকা দাঁত থেকে সুন্দর সারি",
       "category": "ব্রেস",
       "type": "slider",
@@ -272,20 +286,6 @@
       "show": true,
       "title_en": "Uneven, gapped front teeth aligned",
       "caption_en": "Tooth alignment and gaps corrected with braces"
-    },
-    {
-      "title": "ফাঁকা ও উঁচু সামনের দাঁত: ব্রেসের পর",
-      "category": "ব্রেস",
-      "type": "slider",
-      "before": "/assets/media/cases/ortho-o15-before-tc.jpg",
-      "after": "/assets/media/cases/ortho-o15-after-tc.jpg",
-      "image": "",
-      "video": "",
-      "link": "",
-      "caption": "ফাঁকা বন্ধ করে উঁচু দাঁত পেছনে আনা হয়েছে",
-      "show": true,
-      "title_en": "Gapped, protruding front teeth: after braces",
-      "caption_en": "Gaps closed and protruding teeth retracted"
     },
     {
       "title": "ভিড় করা দাঁত সুবিন্যস্ত",
