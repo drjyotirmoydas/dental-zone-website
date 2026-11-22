@@ -532,3 +532,6 @@ body{overflow-x:hidden}
 @media (max-width:860px){.hero-doc{border-left:0;padding:0;text-align:center}.hero-svc{justify-content:center}}
 @media (max-width:640px){.hero-doc b{font-size:1.3rem}.hero-doc .hd-deg{font-size:.9rem}.hero-doc .hd-post{font-size:.84rem}.hero .lead{font-size:.95rem}.hero-chips{display:none}.hero-svc li{font-size:.8rem}}
 @media (max-width:480px){.lang a span{display:none}.lang a{padding:.4em .5em}}
+
+.svc-link{display:inline-block;margin-top:.45rem;font-size:.9rem;font-weight:700;color:var(--blue)}
+.svc-link:hover{text-decoration:underline}
